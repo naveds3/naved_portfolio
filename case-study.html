@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Project Case Studies Portal | Naved Siddiqui</title>
+    <meta name="description"
+        content="Interactive project case studies portal showcasing supply chain management, order management systems, and government digitization projects led by Naved Siddiqui.">
+    <meta name="author" content="Naved Siddiqui">
+
+    <!-- Preconnect to Fonts & CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Case Study Stylesheet -->
+    <link rel="stylesheet" href="style-case-study.css">
+</head>
+
+<body>
+
+    <!-- Sticky Case Study Header -->
+    <header id="case-study-header">
+        <div class="header-container">
+            <!-- Back button (Moved to top left) -->
+            <a href="index.html#projects" class="btn btn-secondary back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+            </a>
+
+            <div class="header-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Branding Logo (Moved to top right) -->
+                <a href="index.html" class="header-back-link" title="Back to main portfolio">
+                    <img src="assets/naved_profile.png" alt="Naved Siddiqui" class="header-profile-img" decoding="async">
+                    <div class="header-branding">
+                        <span class="branding-name">Naved Siddiqui</span>
+                        <span class="branding-title">Case Study Portal</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="case-study-main">
+
+        <!-- Case Study Directory Section (Interactive Selection Cards) -->
+        <section class="case-study-directory-section">
+            <h2 class="directory-section-title">Case Study Directory</h2>
+            <p class="directory-section-desc">Select a project below to load its full case study details and presentation deck.</p>
+            
+            <div class="directory-grid">
+                <!-- Card 1: Cellmark -->
+                <div class="directory-card active" data-project="cellmark">
+                    <div class="card-logo-container">
+                        <img src="assets/cellmark-logo.png" alt="Cellmark Logo" class="card-logo-img" loading="lazy" decoding="async">
+                    </div>
+                    <div class="card-text-container">
+                        <h3 class="card-project-title">Cellmark Recycling OMS</h3>
+                        <p class="card-project-desc">CROPS 2.0 Order Management System & IFS ERP Integration</p>
+                        <span class="card-project-badge active-badge">Active Case Study</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pandora -->
+                <div class="directory-card" data-project="pandora">
+                    <div class="card-logo-container" style="background: rgba(20, 184, 166, 0.05); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                        <i class="fa-solid fa-gem" style="font-size: 1.5rem; color: var(--accent);"></i>
+                    </div>
+                    <div class="card-text-container">
+                        <h3 class="card-project-title">Pandora SCM</h3>
+                        <p class="card-project-desc">Global Inventory Visibility & Logistics Modernisation</p>
+                        <span class="card-project-badge coming-soon-badge">Summary Slide</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Health Campaign -->
+                <div class="directory-card" data-project="health">
+                    <div class="card-logo-container" style="background: rgba(20, 184, 166, 0.05); display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                        <i class="fa-solid fa-file-medical" style="font-size: 1.5rem; color: var(--accent);"></i>
+                    </div>
+                    <div class="card-text-container">
+                        <h3 class="card-project-title">Mozambique Health</h3>
+                        <p class="card-project-desc">Digital Campaign Management & Disease Surveillance</p>
+                        <span class="card-project-badge coming-soon-badge">Summary Slide</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider line -->
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Interactive Slide Presentation Viewer -->
+        <section class="presentation-viewer-section">
+            <div class="viewer-header">
+                <div class="viewer-title-area">
+                    <h2 class="viewer-section-title">Case Study Slide Deck</h2>
+                    <p class="viewer-section-desc">Browse the complete project showcase presentation below.</p>
+                </div>
+            </div>
+
+            <!-- Slide Canvas Wrapper -->
+            <div class="presentation-canvas-container" id="presentation-container">
+                <!-- Navigation Arrows -->
+                <button class="nav-arrow nav-prev" id="slide-prev" aria-label="Previous Slide">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="nav-arrow nav-next" id="slide-next" aria-label="Next Slide">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Carousel Viewport -->
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Dynamic Slide Groups are inserted here by JS -->
+                    </div>
+                </div>
+
+                <!-- Floating slide counter info -->
+                <div class="slide-floating-info">
+                    <span id="slide-index-counter">Slide 1 of 11</span>
+                    <span id="slide-title-label">01. CROPS 2.0 Project Case Study</span>
+                </div>
+
+                <!-- Slide progress bar -->
+                <div class="slide-progress-bar-container">
+                    <div class="slide-progress-bar" id="slide-progress"></div>
+                </div>
+            </div>
+
+            <!-- Slides Thumbnail Grid -->
+            <div class="thumbnails-outer-container">
+                <button class="thumbnail-scroll-arrow scroll-left" id="thumb-scroll-left" aria-label="Scroll thumbnails left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="thumbnails-track-container" id="thumbnails-track">
+                    <!-- Dynamic Thumbnails inserted via JavaScript -->
+                </div>
+                <button class="thumbnail-scroll-arrow scroll-right" id="thumb-scroll-right" aria-label="Scroll thumbnails right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <a href="index.html" class="footer-logo">
+                <span>N</span>S.
+            </a>
+            <div class="footer-socials">
+                <a href="mailto:naveds3@gmail.com" class="social-link" title="Email Naved"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/naved-siddiqui-16b8981a/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="assets/Naved%20Siddiqui%20-%20Product%20Lead_Business%20Analyst.pdf" download class="social-link" title="Download Resume"><i class="fa-solid fa-file-pdf"></i></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Naved Siddiqui. All rights & information reserved.<br>Built from concept to deployment using AI. As a Product Lead, I focus on vision and execution.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script-case-study.js" defer></script>
+</body>
+
+</html>

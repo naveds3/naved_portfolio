@@ -1,0 +1,259 @@
+=== PAGE 1 ===
+Naved Siddiqui
+Product Lead | Senior Business Analyst · Bengaluru, Karnataka
+10+ YEARS EXPERIENCE E-COMMERCE · GOV SERVICES · SUPPLY CHAIN
+✉ naveds3@gmail.com 👤 LinkedIn
+
+=== PAGE 2 ===
+Domain Expertise
+I Naved, brings deep cross-domain expertise spanning e-commerce, supply chain, government digitisation, healthcare, and enterprise digital transformation — 
+enabling him to deliver solutions that are both technically sound and business-relevant.
+
+=== PAGE 3 ===
+Professional Summary
+Senior Business Analyst and Product Lead with 10+ years of experience delivering high-
+impact solutions in E-commerce, Government Services, and Supply Chain Management. 
+Passionate about modernising legacy processes through AI-enhanced product features and 
+Robotic Process Automation.
+Successfully led the end-to-end delivery of a telehealth platform integrating predictive 
+behavioural algorithms and compliant data architectures. Adept at guiding cross-functional 
+teams through the full SDLC, ensuring products are intelligent and data-driven.
+Core Strengths
+AI-Enhanced Product Features
+Robotic Process Automation
+Cross-functional Team Leadership
+Full SDLC Delivery
+Data-Driven Decision Making
+
+=== PAGE 4 ===
+Tarento Group
+APRIL 2020 – PRESENT PRODUCT LEAD | SENIOR BUSINESS ANALYST
+Led diverse projects across e-commerce, real estate, government services, and healthcare — with a strong focus on Supply Chain Management (SCM) domain 
+leadership, delivering OMS/ERP modernisation and global supply chain transformation across complex environments.
+Cellmark Recycling - OMS Nov 2023 – Feb 2025
+Order Management System & IFS & Inventory ERP Integration
+Led end-to-end delivery of a custom Order Management System 
+(OMS) for a global recycling commodities trader
+Managed warehouse and inventory management workflows, from 
+inbound stock to dispatch and reconciliation
+Drove integration with IFS ERP, aligning operational data across 
+procurement, logistics, and finance
+Modernised legacy manual processes through automation and real-
+time inventory visibility
+Pandora - Global Supply Chain March 2026 – 
+Present
+IIS Team | Unicorn / HERO / Gemini Initiatives
+Embedded within Pandora's global supply chain as part of the IIS 
+(Integrated Information Systems) team
+Contributing to strategic initiatives including Unicorn, HERO, and 
+Gemini — focused on supply chain modernisation for a leading 
+global jewellery brand
+Bridging business and technology to align supply chain operations 
+with enterprise-wide transformation goals
+Applying SCM domain expertise to complex, multi-region logistics 
+and fulfilment challenges
+
+=== PAGE 5 ===
+Key Contributions at Tarento Group
+Agile Leadership
+Certified Scrum Master managing Scrum Ceremonies, sprint 
+planning, and backlog optimisation. Actively mitigated scope creep 
+and contributed to UAT activities.
+Process Automation
+Implemented UiPath RPA solutions to streamline UAT, reducing 
+manual testing efforts by approximately 30%.
+Data Visualisation
+Developed interactive Power BI dashboards for real-time project 
+monitoring, enabling data-driven decision-making and enhanced 
+project transparency.
+Design Thinking
+Utilised FIGMA and Adobe XD to create user-friendly product 
+interfaces, crafting detailed SRS, BRD, and PRD documentation.
+
+=== PAGE 6 ===
+Career Journey
+1Tarento Group · April 2020 – Present 
+Product Lead | Senior Business Analyst — Product Journey 
+planning, Agile leadership, RPA automation (UiPath), Power BI 
+dashboards, and design thinking (Figma, Adobe XD). Key projects: 
+Lulu eCommerce, Property Guru, Faecal Sludge Management 
+Odisha, Arcade Therapeutics, Health Campaign Mozambique, 
+Cellmark Recycling OMS, Pandora SCM.
+2 CEDCOSS Technologies · Sep 2017 – Apr 2020
+Business Analyst — E-commerce specialist on the Magento Team. 
+Managed sprint ceremonies, project backlogs (JIRA/Azure 
+DevOps), client support, SRS/BRD documentation, competitor 
+analysis, and UAT participation.
+3Sensation Software Solutions · Feb 2017 – Sep 
+2017
+Business Analyst — Managed BRD documentation, process flow 
+diagrams, and wireframes (MS-Visio, Balsamiq, Figma). Liaised 
+between stakeholders and internal teams; supported pre-sales 
+proposals.
+4 Contact Tech Solution · May 2014 – Feb 2015
+Jr Marketing Executive — Managed projects for Reliance 
+Communication (Play Along KBC) and NPCI banking (USSD). 
+Handled MIS revenue tracking, GUI migration, and telecom 
+channel marketing.
+
+=== PAGE 7 ===
+Pandora (SCM): Global Supply 
+Chain Modernisation
+MARCH 2026 – PRESENT INVENTORY INFORMATION SYSTEM
+As Business Analyst within the IIS team at Pandora — the world's largest jewellery brand — 
+driving analysis across three major global initiatives to modernise supply chain and 
+inventory at scale.
+🖥 Unicorn
+Transitioning global store networks to 
+modern, unified commerce and POS 
+platforms.
+📋 HERO
+Enhancing inventory visibility to feed 
+smart planning tools so stores never 
+run out of customer favourites.
+🔌 Gemini
+Powering seamless e-commerce and 3PL integrations in critical expanding regions like 
+Brazil.
+
+=== PAGE 8 ===
+Cellmark Recycling – Order Management System
+NOVEMBER 2023 – FEBRUARY 2025 SUPPLY CHAIN · OMS · ERP
+Cellmark Recycling is a global recycling and commodities trading company. Led the end-to-end business analysis for a custom Order Management System 
+(OMS) with integrated warehouse and inventory management, built as a full ERP solution integrated with IFS Accounting system.
+The custom OMS covered order lifecycle management, warehouse operations, inventory tracking, and commodity trading workflows. Acted as the bridge 
+between business stakeholders and the development team, producing detailed BRD, FRD, and process flow documentation. Ensured seamless integration 
+with IFS ERP for financial reconciliation and reporting.
+Key Highlights
+🔗 Full ERP Integration
+Integrated with IFS Accounting for financial 
+reconciliation and reporting
+🏭 Warehouse & Inventory
+Custom warehouse operations and inventory 
+tracking management
+📦 Order Lifecycle
+End-to-end order lifecycle management from 
+intake to fulfilment
+♻ Trading Workflows
+Commodity trading workflow automation for recycling operations
+📄 Documentation
+LC, Customer Invoice, BOL Instruction, Shipping Docs logic implemented 
+and Project process flow documentation delivered
+
+=== PAGE 9 ===
+Health Campaign Management – Mozambique
+FEBRUARY 2023 – OCTOBER 2023 PUBLIC HEALTH · DIGIT PLATFORM
+DIGIT is an open-source platform to enhance global public health 
+capabilities, alleviating diseases of poverty through digital tools for health 
+campaigns and disease surveillance. The platform provides flexibility in 
+planning, managing, and executing health campaigns with meticulous 
+monitoring and gap identification.
+
+
+=== PAGE 10 ===
+E-Commerce Projects
+Lulu Hyper-local eCommerce 
+(May–Oct 2020)
+Flutter mobile app for Lulu Group's 
+hypermarket, featuring promotions, gift card 
+integration, and additional e-commerce 
+functionality for the Gulf region.
+HNI: HON Basyx Furniture 
+Marketplace (Jun–Dec 2020)
+B2B e-commerce marketplace on Magento-2 
+Commerce Cloud. Responsible for 
+requirements analysis, stakeholder liaison, 
+Scrum ceremonies, and regression testing.
+Zeo Market – eCommerce 
+Marketplace (Oct 2017–Apr 
+2020)
+India's online retail platform offering diverse 
+products. Integrated Zeo Market Store with 
+giant marketplaces Amazon and Walmart.
+
+=== PAGE 11 ===
+More Key Projects
+Faecal Sludge Management – Odisha Govt (2022)
+Digitised the complete manual sludge management process for the 
+Government of Odisha on the DIGIT Platform, covering sludge collection and 
+treatment workflows.
+Skills Used:
+DIGIT PLATFORM PROCESS DIGITISATION STAKEHOLDER MANAG EMENT
+BRD DOCUMENTATION GOVERNMENT SERVICES
+Arcade Therapeutics – StarStarter Rx's (Jan 2021 – Dec 
+2023)
+MENTAL HEALTH · HEALTHCARE
+Spearheaded development of a cross-platform mental health solution. 
+Integrated predictive ML models with clinical screening tools (PHQ-2/GAD-
+2). Managed HIPAA compliance backlog. Achieved 78% engagement rate 
+post-MVP launch.
+Skills Used:
+HIPAA COMPLIANCE ML INTEGRATION PRODUCT BACKLOG
+CLINICAL WORKFLOWS PHQ-2/GAD-2
+Core Dining, Finland & Unidors (2021–2022)
+Core Dining: Role-based restaurant management app for managers and 
+waiters. Unidors: eCommerce mobile app for the Finnish Swimming 
+Federation's product range.
+Skills Used:
+MOBILE APP BA ROLE-BASED ACCESS ECOMMERCE AGILE
+STAKEHOLDER LIAISON
+
+=== PAGE 12 ===
+Skills: Product Strategy & Business Analysis
+Product Strategy & Leadership
+Product Lifecycle Management (PLM)
+Agile & Scrum Leadership (Scrum, Kanban, Backlog)
+Strategic Roadmapping & UX Strategy
+Stakeholder Management
+Business Analysis
+Requirement Elicitation & Analysis
+Use Case Development
+Solution Assessment & Validation
+Documentation: BRD / PRD / FRD / SRS
+
+=== PAGE 13 ===
+Technical & Analytical Skills
+Power BI
+Dashboard Development & Data 
+Visualisation
+UiPath RPA
+Test Automation & Process Streamlining
+JIRA / Azure DevOps
+Sprint & Backlog Management
+Figma / Adobe XD
+Wireframing & UI/UX Design
+Data Mapping
+Process Flow Modelling & MS Visio
+
+=== PAGE 14 ===
+Education
+Amity University
+B.Tech – Information Technology
+August 2007 – June 2011
+Sri Balaji University (BITM), Pune
+Post Graduate Diploma in Management
+Telecom and Information Technology
+July 2012 – April 2014
+Certifications
+AI Enterprise Product 
+Management
+Microsoft
+Certified Scrum Master 
+(CSM)
+Scrum Alliance
+Business Analysis 
+Fundamental
+Udemy
+
+=== PAGE 15 ===
+Let's Connect
+Open to exciting opportunities in Product Management, Business Analysis, and Digital Transformation across global markets.
+📧 Email
+naveds3@gmail.com
+📞 Phone
++91-9519646951
+📍 Location
+Bengaluru, Karnataka
+🌐 LinkedIn
+naved-siddiqui-16b8981a
+View Full Portfolio Get in Touch
+
