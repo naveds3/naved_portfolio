@@ -83,6 +83,8 @@ body {
     transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
+
+
 /* Header & Navigation */
 #site-header {
     position: fixed;
@@ -225,13 +227,13 @@ main {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 0;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 3rem;
     position: relative;
-    padding-bottom: 6rem;
+    padding-bottom: 1.5rem;
 }
 
 .hero-content {
@@ -524,7 +526,7 @@ main {
     display: flex;
     justify-content: flex-start;
     gap: 3rem;
-    margin-top: 0.85rem;
+    margin-top: 0.5rem;
     border-top: 1px solid var(--border-color);
     padding-top: 1rem;
 }
@@ -4649,4 +4651,306 @@ footer {
     }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   PORTFOLIO — COMPREHENSIVE RESPONSIVE SYSTEM
+   Breakpoints:  1024px (Tablet)  |  768px (Mobile)  |  480px (Small phone)
+═══════════════════════════════════════════════════════════════════════════ */
 
+/* ── 1. TABLET  ≤ 1024px ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+
+    /* Layout */
+    main {
+        padding: var(--main-padding-top) 4% 3rem 4%;
+    }
+
+    /* Hero */
+    .hero {
+        gap: 2rem;
+    }
+    .hero-name {
+        font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+    }
+    .profile-frame {
+        max-width: 320px;
+    }
+    .hero-infobar {
+        gap: 2rem;
+    }
+    .hero-cta {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    /* Expertise */
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Education / Certifications */
+    .education-grid,
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Section headings */
+    .section-title {
+        font-size: clamp(1.6rem, 3vw, 2rem) !important;
+    }
+}
+
+/* ── 2. MOBILE  ≤ 768px ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Root */
+    :root {
+        --main-padding-top: 5.5rem;
+    }
+
+    html {
+        font-size: 15px;
+    }
+
+    /* Layout */
+    main {
+        padding: var(--main-padding-top) 1.25rem 3rem 1.25rem;
+    }
+
+    /* ─ Hero wrapper: kill the scroll-room height on mobile ─ */
+    .hero-scroll-wrapper {
+        height: auto !important;
+    }
+
+    /* ─ Hero section: go vertical, no sticky needed ─ */
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+        padding-bottom: 1rem;
+        position: static !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    /* always visible — JS animation skipped on mobile */
+    .hero-content {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        gap: 0.9rem;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-image-container {
+        flex: none;
+        width: 100%;
+        max-width: 220px;
+        margin: 0 auto;
+        transform: none !important;
+    }
+
+    .profile-frame {
+        max-width: 200px;
+    }
+
+    .hero-name {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
+        letter-spacing: -0.5px;
+        text-align: center;
+    }
+
+    .hero-intro {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .hero-location {
+        justify-content: center;
+    }
+
+    .badge-container {
+        justify-content: center;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .hero-desc {
+        font-size: 0.875rem;
+        text-align: center;
+        line-height: 1.65;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        margin-top: 0.75rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-infobar {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.25rem 2rem;
+        padding-top: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    .info-val {
+        font-size: 1.5rem;
+    }
+
+    /* No scroll indicator on mobile */
+    .hero-scroll-indicator {
+        display: none;
+    }
+
+    /* ─ Expertise ─ */
+    .expertise-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ─ Career timeline ─ */
+    .career-sidebar {
+        width: 100% !important;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
+    .career-tab-btn {
+        white-space: nowrap;
+        min-width: max-content;
+    }
+
+    /* ─ Projects ─ */
+    .projects-grid,
+    .notable-projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ─ Skills ─ */
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .skills-category {
+        padding: 1rem !important;
+    }
+
+    /* ─ Education / Certifications ─ */
+    .education-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ─ Contact ─ */
+    .contact-grid,
+    .contact-container {
+        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
+    }
+
+    /* ─ Section common ─ */
+    .section-title {
+        font-size: 1.6rem !important;
+        letter-spacing: -0.5px;
+    }
+    .section-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    /* ─ Footer ─ */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    /* ─ Cards general ─ */
+    .section-card,
+    .cert-card,
+    .project-card,
+    .skill-card {
+        padding: 1rem !important;
+    }
+}
+
+/* ── 3. SMALL PHONE  ≤ 480px ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    :root {
+        --main-padding-top: 5rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    main {
+        padding: var(--main-padding-top) 1rem 2rem 1rem;
+    }
+
+    /* Hero */
+    .hero-name {
+        font-size: clamp(1.6rem, 8vw, 1.9rem);
+    }
+
+    .profile-frame {
+        max-width: 160px;
+    }
+
+    .hero-image-container {
+        max-width: 180px;
+    }
+
+    .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.82rem;
+    }
+
+    .hero-infobar {
+        gap: 1rem 1.5rem;
+    }
+
+    .info-val {
+        font-size: 1.3rem;
+    }
+
+    .info-label {
+        font-size: 0.7rem;
+    }
+
+    /* Section headings */
+    .section-title {
+        font-size: 1.4rem !important;
+    }
+
+    /* Nav */
+    .nav-container {
+        padding: 0.9rem 1rem;
+    }
+}

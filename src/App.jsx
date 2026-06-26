@@ -17,13 +17,13 @@ import CaseStudyPortal from './components/organisms/CaseStudyPortal';
 
 function App() {
   const [themeMode, setThemeMode] = useState(() => {
-    return localStorage.getItem('portfolio-theme') || 'dark';
+    return sessionStorage.getItem('portfolio-theme') || 'light';
   });
   
   const [view, setView] = useState('portfolio'); // 'portfolio' or 'casestudy'
   const [activeProject, setActiveProject] = useState(null); // 'cellmark', 'pandora', 'health'
   const [activeSection, setActiveSection] = useState('#home');
-  
+
   // Dynamic JSON data
   const [portfolioData, setPortfolioData] = useState(null);
   const [caseStudiesData, setCaseStudiesData] = useState(null);
@@ -65,10 +65,11 @@ function App() {
     return () => window.removeEventListener('popstate', handleRoute);
   }, []);
 
+
   // 2. Handle theme sync on data-theme attribute
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', themeMode);
-    localStorage.setItem('portfolio-theme', themeMode);
+    sessionStorage.setItem('portfolio-theme', themeMode);
   }, [themeMode]);
 
   // 3. Scroll Spy for active section indicator
@@ -279,8 +280,16 @@ function App() {
   const muiTheme = getTheme(themeMode);
 
   if (loading) {
+    const isLight = themeMode === 'light';
     return (
-      <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#080b11', color: '#c5a358' }}>
+      <Box sx={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        backgroundColor: isLight ? '#faf8f5' : '#080b11', 
+        color: isLight ? '#8f6424' : '#c5a358' 
+      }}>
         <Typography variant="h5" sx={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700 }}>
           Loading Portfolio...
         </Typography>
