@@ -25,11 +25,11 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
           ))}
         </div>
 
-        <p style={{ color: 'var(--text-secondary)', maxWidth: '1100px', marginTop: '0.5rem', lineHeight: '1.7', textAlign: 'justify' }}>
+        <p className="hero-desc">
           As a Senior Business Analyst and Product Lead with over a decade of experience, I specialize in
           delivering high-impact solutions across Supply Chain Management, E-Commerce, and Government
           Services.
-          <br /><br />
+          <br />
           I am deeply passionate about modernizing legacy processes through AI-enhanced features. My focus is
           on guiding cross-functional teams through the complete SDLC to ensure products are not only
           functional but intelligent and data-driven—a methodology I recently applied to successfully launch a

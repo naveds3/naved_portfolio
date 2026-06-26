@@ -1,4 +1,4 @@
-﻿/* Font face variables and reset styles are defined below. Typography is loaded via preconnect links in index.html. */
+/* Font face variables and reset styles are defined below. Typography is loaded via preconnect links in index.html. */
 
 
 :root {
@@ -286,6 +286,14 @@ main {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.hero-desc {
+    color: var(--text-secondary);
+    max-width: 1100px;
+    margin-top: 0.5rem;
+    line-height: 1.7;
+    text-align: justify;
 }
 
 /* Badges styling */
@@ -4062,6 +4070,53 @@ footer {
     text-align: center;
     line-height: 1.6;
     max-width: 600px;
+}
+
+/* Desktop screen height optimization to fit Hero section in a single page view */
+@media (min-width: 1025px) {
+    main {
+        padding: 5.5rem 5% 0 5%;
+    }
+    
+    .hero {
+        min-height: calc(100vh - 5.5rem);
+        height: calc(100vh - 5.5rem);
+        display: flex;
+        align-items: center;
+        padding-bottom: 2rem;
+        box-sizing: border-box;
+    }
+    
+    .hero-content {
+        gap: 0.85rem;
+    }
+    
+    .hero-desc {
+        margin-top: 0.25rem;
+        line-height: 1.55;
+        font-size: 0.95rem;
+    }
+    
+    .hero-cta {
+        margin-top: 0.5rem;
+    }
+    
+    .hero-infobar {
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+    }
+    
+    .hero-image-container {
+        margin-top: 1.5rem;
+    }
+    
+    .profile-frame {
+        max-width: 330px;
+    }
+
+    #home {
+        scroll-margin-top: 5.5rem;
+    }
 }
 
 /* Mobile responsive styles */
