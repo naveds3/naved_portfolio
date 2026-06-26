@@ -1,0 +1,183 @@
+{
+  "cellmark": {
+    "title": "CROPS 2.0 Project Case Study",
+    "subtitle": "A Collaborative Modernization of Global Supply Chain Management",
+    "badges": [
+      { "text": "Client: Cellmark", "class": "client-badge" },
+      { "text": "Implementation Partner: Tarento Group", "class": "partner-badge" }
+    ],
+    "illustration": "assets/cellmark-case-study/cargo-ship-illustration.png",
+    "slides": [
+      {
+        "src": "assets/cellmark-case-study/1_CROPS-20-Project-Case-Study.png",
+        "title": "01. CROPS 2.0 Project Case Study",
+        "details": {
+          "icon": "fa-compass",
+          "title": "01. Project Initiation & Overview",
+          "body": "<ul><li><strong>Initiative:</strong> Re-engineering legacy Order Management System (OMS) as <strong>CROPS 2.0</strong>.</li><li><strong>Collaboration:</strong> Deep integration between Cellmark Recycling and partner Tarento Group.</li><li><strong>Goal:</strong> Replace manual Excel workflows with real-time OMS and IFS ERP systems.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/2_Executive-Summary.png",
+        "title": "02. Executive Summary",
+        "details": {
+          "icon": "fa-bullseye",
+          "title": "02. Executive Summary",
+          "body": "<ul><li><strong>Methodology:</strong> Agile-driven cross-functional coordination and sprint planning.</li><li><strong>Core Deliverable:</strong> Highly flexible, scalable Order Management System fully integrated with IFS.</li><li><strong>Business Value:</strong> Enhanced operational efficiency, financial transparency, and real-time visibility.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/3_Project-Background-and-Business-Challenge.png",
+        "title": "03. Project Background & Challenge",
+        "details": {
+          "icon": "fa-circle-exclamation",
+          "title": "03. The Core Challenges",
+          "cardClass": "challenge-card",
+          "body": "<ul><li><strong>Flexibility:</strong> Europe's combined invoicing rules were unsupported.</li><li><strong>Workarounds:</strong> Spreadsheet reliance for costing and data uploads.</li><li><strong>Granularity:</strong> Bundled ocean freight charges hid true margins.</li><li><strong>Usability:</strong> Legacy search workflows were slow and inefficient.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/4_The-Project-Team-and-Agile-Approach.png",
+        "title": "04. Project Team & Agile Approach",
+        "details": {
+          "icon": "fa-people-group",
+          "title": "04. Agile Team & Roles",
+          "body": "<p>Agile sprint team composition and core workflow responsibilities:</p><div class=\"roles-grid\"><div class=\"role-item\"><strong>Project Management:</strong> Sprints, risk mitigation, and roadmaps.</div><div class=\"role-item\"><strong>Business Analysis (Naved):</strong> BRD/FRD definition, user stories, workshops.</div><div class=\"role-item\"><strong>Development:</strong> Custom engine, tax billing, and API integrations.</div><div class=\"role-item\"><strong>Quality Assurance:</strong> Automated scripts and comprehensive regression runs.</div></div>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/5_Solution-Highlights-and-Collaborative-Execution.png",
+        "title": "05. Solution Highlights & Execution",
+        "details": {
+          "icon": "fa-layer-group",
+          "title": "05. Solution Blueprint",
+          "body": "<ul><li><strong>Combined Invoicing:</strong> Custom logic for cross-border European VAT orders.</li><li><strong>Ocean Freight:</strong> Cost disaggregation for ledger-level profit transparency.</li><li><strong>Vendor Payments:</strong> Interactive settlement screens with manual tax buffers.</li><li><strong>Usability Updates:</strong> Enterprise ERP migration, customs HS codes, and stock filters.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/6_European-Domestic-Combined-Invoicing.png",
+        "title": "06. European Combined Invoicing",
+        "details": {
+          "icon": "fa-file-invoice-dollar",
+          "title": "06. Domestic Combined Invoicing (Solution A)",
+          "body": "<ul><li><strong>Challenge:</strong> Combining multiple container bookings into single VAT invoicing blocks.</li><li><strong>BAs Input:</strong> Mapped regional European VAT workflows and exception boundaries.</li><li><strong>Solution:</strong> Two-step posting workflow (MTS to AR) with automatic transactional rollbacks.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/7_Granular-Financial-Posting-for-Ocean-Freight.png",
+        "title": "07. Ocean Freight Financial Posting",
+        "details": {
+          "icon": "fa-anchor",
+          "title": "07. Granular Ocean Freight Posting (Solution B)",
+          "body": "<ul><li><strong>Challenge:</strong> Bundled logistics charges obscured gross margins and multi-currency AP matching.</li><li><strong>BAs Input:</strong> Held accounting workshops to map granular costing lines.</li><li><strong>Solution:</strong> Engine disaggregation of Freight Rate, BAF, CAF, and local fees.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/8_Enhanced-Vendor-Payment-and-Tax-Adjustment.png",
+        "title": "08. Vendor Payment & Tax Adjustment",
+        "details": {
+          "icon": "fa-calculator",
+          "title": "08. Vendor Payment & Tax Adjustment (Solution C)",
+          "body": "<ul><li><strong>Challenge:</strong> Rounding discrepancies locked payment settlements due to static tax rules.</li><li><strong>BAs Input:</strong> Specified a secure tax override workflow with validation ranges.</li><li><strong>Solution:</strong> Editable payment tax fields allowing manual adjustments within set tolerances.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/9_Data-Management-and-Usability-Improvements.png",
+        "title": "09. Data & Usability Improvements",
+        "details": {
+          "icon": "fa-database",
+          "title": "09. Data & Usability Improvements (Solution D)",
+          "body": "<ul><li><strong>ERP Migration:</strong> Clean cutover from legacy Microsoft Great Plains to IFS platform.</li><li><strong>Customs Compliance:</strong> Integrated standard HS Code compliance to order lines.</li><li><strong>Data Upload:</strong> Revamped Ocean Freight Excel template and backend parser.</li><li><strong>Inventory UX:</strong> Upgraded stock search filters based on daily user surveys.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/10_A-Pivotal-Challenge-The-Inventory-Demo-Session.png",
+        "title": "10. The Inventory Demo Session",
+        "details": {
+          "icon": "fa-users-gear",
+          "title": "10. Overcoming the Inventory Demo Hurdle",
+          "cardClass": "highlighted-card",
+          "body": "<ul><li><strong>Crucial Block:</strong> Regional users identified sync mismatches between OMS and 3PL ledgers.</li><li><strong>Product Leadership:</strong> Naved coordinated mapping reviews and schema alignments.</li><li><strong>Resolution:</strong> Prompt db sync update and hotfix deployment, securing user buy-in.</li></ul>"
+        }
+      },
+      {
+        "src": "assets/cellmark-case-study/11_Outcomes-and-Business-Impact.png",
+        "title": "11. Outcomes & Business Impact",
+        "details": {
+          "icon": "fa-chart-line",
+          "title": "11. Outcomes & Business Impact",
+          "cardClass": "impact-card",
+          "body": "<div class=\"metrics-grid\"><div class=\"metric-item\"><span class=\"metric-num\">99%</span> <span class=\"metric-label\">Reduction in Billing Errors</span></div><div class=\"metric-item\"><span class=\"metric-num\">Hours</span> <span class=\"metric-label\">vs. Days for Freight Posting</span></div><div class=\"metric-item\"><span class=\"metric-num\">Real-time</span> <span class=\"metric-label\">3PL Stock Reconciliation</span></div><div class=\"metric-item\"><span class=\"metric-num\">100%</span> <span class=\"metric-label\">Cross-Border VAT Compliance</span></div></div>"
+        }
+      }
+    ]
+  },
+  "pandora": {
+    "title": "Pandora SCM: Global Supply Chain Modernisation",
+    "subtitle": "Real-time stock visibility and logistics management across regional distribution networks.",
+    "badges": [
+      { "text": "Client: Pandora", "class": "client-badge" },
+      { "text": "Implementation Partner: Tarento Group", "class": "partner-badge" }
+    ],
+    "illustration": "assets/scm_network_visualization.png",
+    "slides": [
+      { "src": "assets/slides/7_Pandora-SCM-Global-Supply-Chain-Modernisation.png", "title": "01. Pandora SCM Modernisation Summary" }
+    ],
+    "narrative": [
+      {
+        "icon": "fa-compass",
+        "title": "01. Project Background & Context",
+        "body": "<p><strong>Pandora</strong>, the world's largest jewelry brand, required a highly scalable and modern supply chain architecture to track stock movements across global distribution networks. Naved worked as a Business Analyst within the Inventory Visibility (IIS) team, focusing on mapping data flows and APIs.</p><p>The goal was to replace fragmented tracking tools with a unified, real-time inventory system that provides instant visibility into stock levels across multiple global logistics hubs.</p>"
+      },
+      {
+        "icon": "fa-gears",
+        "title": "02. Core Business Workflows",
+        "body": "<ul><li><strong>Real-time Stock Synchronization:</strong> Designed integration contracts and API schema mappings connecting regional Warehouse Management Systems (WMS) with centralized inventory databases.</li><li><strong>Logistics Operations Mapping:</strong> Documented end-to-end user stories and functional specifications for order routing and inventory allocation rules.</li><li><strong>Automated Exception Handling:</strong> Structured workflows for handling order routing errors and stock discrepancies, reducing manual recovery efforts.</li></ul>"
+      },
+      {
+        "icon": "fa-people-group",
+        "title": "03. Collaborative Execution",
+        "body": "<p>Collaborated closely with global engineering, logistics, and data mapping teams in multiple time zones. Maintained a clear, prioritized product backlog and organized dynamic mapping sessions to resolve data contract inconsistencies.</p><p>Fostered strong alignment between technical developers and business stakeholders to ensure successful sprint deliveries.</p>"
+      },
+      {
+        "icon": "fa-chart-line",
+        "title": "04. Business Value & Outcomes",
+        "body": "<p>The Inventory Visibility solution improved logistics performance and visibility metrics:</p><ul><li><strong>Global Visibility:</strong> Enabled trading and inventory planners to check real-time stock availability globally.</li><li><strong>Reduced Discrepancies:</strong> Minimized mismatch errors between retail channels and warehouse logs.</li><li><strong>Enhanced Scalability:</strong> Modern database API contracts supported high holiday sales volumes without service degradation.</li></ul>"
+      }
+    ]
+  },
+  "health": {
+    "title": "Health Campaign Management: Mozambique",
+    "subtitle": "Digitising manual healthcare operations and real-time campaign surveillance on the DIGIT platform.",
+    "badges": [
+      { "text": "Client: Mozambique Ministry of Health", "class": "client-badge" },
+      { "text": "Platform: DIGIT Open Source Platform", "class": "partner-badge" }
+    ],
+    "illustration": "assets/digit-campaign-ground.png",
+    "slides": [
+      { "src": "assets/slides/9_Health-Campaign-Management-Mozambique.png", "title": "01. Mozambique Health Campaign Summary" }
+    ],
+    "narrative": [
+      {
+        "icon": "fa-compass",
+        "title": "01. Project Background & Context",
+        "body": "<p>The <strong>Mozambique Ministry of Health</strong> sought to digitise their large-scale health campaigns (including vaccine distributions and disease therapies). Using the open-source <strong>DIGIT platform</strong>, the project aimed to streamline field health logistics and reporting.</p><p>Naved led business analysis and product management, coordinating requirements gathering with local health administrators and digital platform engineers.</p>"
+      },
+      {
+        "icon": "fa-gears",
+        "title": "02. Core Business Workflows",
+        "body": "<ul><li><strong>Field Survey Mobilisation:</strong> Designed simple offline-first mobile workflows for field health workers to register citizens and record vaccine administrations.</li><li><strong>Inventory Distribution Tracking:</strong> Built ledger models to track vaccine and drug stocks from central cold rooms to local clinics, reducing spoilage risks.</li><li><strong>Disease Surveillance Dashboards:</strong> Designed administrative reporting screens tracking campaign completion rates and supply consumption metrics.</li></ul>"
+      },
+      {
+        "icon": "fa-people-group",
+        "title": "03. Stakeholder Policy Alignment",
+        "body": "<p>Managed a complex group of stakeholders, including non-governmental health organisations, local clinic directors, and software developers.</p><p>Conducted field research to understand network constraints in rural areas, ensuring the offline data sync mechanism was resilient and easy to use.</p>"
+      },
+      {
+        "icon": "fa-chart-line",
+        "title": "04. Business Value & Outcomes",
+        "body": "<p>The digital transformation of Mozambique health campaigns established a foundation for data-driven healthcare policy:</p><ul><li><strong>Real-time Surveillance:</strong> Allowed health officials to track campaign coverages dynamically instead of waiting weeks for manual paper logs.</li><li><strong>Optimised Logistics:</strong> Reduced clinic stock-outs through automated reorder alerts.</li><li><strong>Offline Resilience:</strong> Field workers successfully recorded data in areas without cellular coverage, sync-matching entries upon returning to network range.</li></ul>"
+      }
+    ]
+  }
+}

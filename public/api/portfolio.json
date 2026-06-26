@@ -1,0 +1,395 @@
+{
+  "personal": {
+    "name": "Naved Siddiqui",
+    "title": "Product Lead | Senior Business Analyst",
+    "location": "Bengaluru, Karnataka",
+    "email": "naveds3@gmail.com",
+    "phone": "+91-9519646951",
+    "linkedin": "naved-siddiqui-16b8981a",
+    "linkedinUrl": "https://www.linkedin.com/in/naved-siddiqui-16b8981a/",
+    "cvUrl": "assets/Naved%20Siddiqui%20-%20Product%20Lead_Business%20Analyst.pdf",
+    "avatar": "assets/naved_profile.png",
+    "stats": [
+      {
+        "id": "experience",
+        "value": "10+",
+        "label": "Years Exp",
+        "details": ["Tarento Group", "Cedcoss Technologies", "Sensation Software Solution", "Contakt Tech Solution"]
+      },
+      {
+        "id": "projects",
+        "value": "15+",
+        "label": "Projects",
+        "details": [
+          "Cellmark (OMS, WMS, F&O)",
+          "Pandora (IIS)",
+          "Lulu Hyper-local eCommerce Store",
+          "Health Campaign Management",
+          "Faecal Sludge Management System - Odisha Government"
+        ]
+      },
+      {
+        "id": "domains",
+        "value": "3",
+        "label": "Key Domains",
+        "details": ["Supply Chain Management", "E-Commerce", "Government Services"]
+      }
+    ],
+    "badges": [
+      { "icon": "fa-solid fa-briefcase", "text": "10+ Years Experience" },
+      { "icon": "fa-solid fa-layer-group", "text": "E-Commerce · Gov Services · Supply Chain" }
+    ],
+    "bio": "As a Senior Business Analyst and Product Lead with over a decade of experience, I specialize in delivering high-impact solutions across Supply Chain Management, E-Commerce, and Government Services.\n\nI am deeply passionate about modernizing legacy processes through AI-enhanced features. My focus is on guiding cross-functional teams through the complete SDLC to ensure products are not only functional but intelligent and data-driven—a methodology I recently applied to successfully launch an Inhouse OMS and Inventory planning platform integrated with predictive behavioral algorithms and compliant data architectures."
+  },
+  "expertise": [
+    {
+      "icon": "fa-solid fa-truck-ramp-box",
+      "title": "Supply Chain (SCM)",
+      "desc": "Modernising global warehousing, complex multi-region logistics, and order management systems.",
+      "bullets": [
+        "Order Management Systems (Cellmark Recycling)",
+        "Inventory Visibility (Pandora IIS team)",
+        "Warehouse & Dispatch automation",
+        "3PL regional & global integrations"
+      ]
+    },
+    {
+      "icon": "fa-solid fa-cart-shopping",
+      "title": "E-Commerce",
+      "desc": "Building hyper-local marketplaces, cross-border integrations, and seamless user experiences.",
+      "bullets": [
+        "Hyper-local eCommerce (Lulu mobile app)",
+        "B2B Marketplaces (HON Basyx Furniture)",
+        "Marketplace Integration (Amazon & Walmart)",
+        "POS Commerce and store network platforms"
+      ]
+    },
+    {
+      "icon": "fa-solid fa-landmark",
+      "title": "Gov Digitisation",
+      "desc": "Digitising complex manual workflows for public sectors using scalable open-source platforms.",
+      "bullets": [
+        "Process Digitisation on DIGIT Platform",
+        "Sludge Management (Odisha Government)",
+        "Stakeholder alignment & policy mapping",
+        "Public service operations streamlining"
+      ]
+    },
+    {
+      "icon": "fa-solid fa-stethoscope",
+      "title": "Healthcare & HealthTech",
+      "desc": "Delivering compliant, secure public health platforms and predictive therapy applications.",
+      "bullets": [
+        "Disease Surveillance (Mozambique Health)",
+        "HIPAA Compliant backlog management",
+        "Predictive ML clinical integrations",
+        "Telehealth behavioral algorithms"
+      ]
+    },
+    {
+      "icon": "fa-solid fa-laptop-code",
+      "title": "Digital Transformation",
+      "desc": "Delivering custom mobile and web solutions to modernize traditional operations and boost user engagement.",
+      "bullets": [
+        "Restaurant Management App (Core Dining)",
+        "Swimming Federation eCommerce (Finland Unidors)",
+        "Role-based access & workflow digital designs",
+        "Cross-platform mobile development roadmaps"
+      ]
+    }
+  ],
+  "summary": {
+    "paragraphs": [
+      "Senior Business Analyst and Product Lead with over a decade of experience delivering high-impact solutions across Supply Chain Management (SCM), E-Commerce, and Government Services. I specialize in modernising legacy inventory planning, order management, and logistics systems using intelligent, data-driven features and automation.",
+      "Adept at bridging the gap between complex operations and technology, I guide cross-functional teams through the entire SDLC. My SCM expertise focuses on optimizing supply chain flows, creating real-time inventory visibility, and integrating custom operational software (OMS/WMS) with enterprise ERP frameworks."
+    ],
+    "pillars": [
+      {
+        "icon": "fa-solid fa-truck-ramp-box",
+        "title": "Global SCM Architecture",
+        "desc": "Modernising inventory visibility, unified commerce, and POS/3PL logistics integrations at scale (e.g., Pandora IIS initiatives)."
+      },
+      {
+        "icon": "fa-solid fa-warehouse",
+        "title": "OMS & ERP Integration",
+        "desc": "Designing order management and warehouse operations systems from intake to financial reconciliation (e.g., Cellmark Recycling & IFS ERP)."
+      }
+    ],
+    "strengths": [
+      "AI-Enhanced SCM Features",
+      "Robotic Process Automation (RPA)",
+      "Cross-functional Team Leadership",
+      "OMS & ERP System Delivery",
+      "Data-Driven Decision Making"
+    ],
+    "engagements": [
+      { "name": "Cellmark", "logo": "https://www.cellmark.com/wp-content/themes/cm-theme/assets/img/cm-logo.svg" },
+      { "name": "Pandora", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Pandora_logo_2025.svg/1280px-Pandora_logo_2025.svg.png" }
+    ]
+  },
+  "career": {
+    "steps": [
+      {
+        "role": "Jr Marketing Executive",
+        "company": "Contakt Tech Solution",
+        "date": "May 2014 – Feb 2015",
+        "summary": "Coordinated project administration and data tracking for major telecom and digital banking portals.",
+        "bullets": [
+          "Managed campaigns for Reliance Communications (Play Along KBC) and NPCI (USSD banking).",
+          "Maintained MIS reports and revenue tracking charts.",
+          "Supported GUI migrations and telecom channel operations."
+        ]
+      },
+      {
+        "role": "Business Analyst",
+        "company": "Sensation Software Solutions",
+        "date": "Feb 2017 – Sep 2017",
+        "summary": "Facilitated stakeholder alignment and business process mapping for enterprise software applications.",
+        "bullets": [
+          "Created detailed process flow diagrams and wireframes (MS-Visio, Balsamiq, Figma).",
+          "Drafted pre-sales technical proposals and functional requirements.",
+          "Supported internal dev teams as the primary conduit for client feedback."
+        ]
+      },
+      {
+        "role": "Business Analyst",
+        "company": "CEDCOSS Technologies",
+        "date": "Sep 2017 – Apr 2020",
+        "summary": "Magento Team E-Commerce specialist, managing sprint planning, backlog grooming, and customer validation.",
+        "bullets": [
+          "Managed project backlogs and sprint iterations via JIRA and Azure DevOps.",
+          "Authored comprehensive BRD, FRD, and SRS documents for e-commerce platforms.",
+          "Guided UAT activities and integrated large marketplaces (Amazon & Walmart)."
+        ]
+      },
+      {
+        "role": "Product Lead & Senior Business Analyst",
+        "company": "Tarento Group",
+        "date": "Apr 2020 – Present",
+        "summary": "Led complex OMS/ERP modernization and SCM transformations, managing cross-functional Agile teams.",
+        "bullets": [
+          "SCM domain lead for Cellmark OMS and Pandora global inventory team.",
+          "Implemented UiPath RPA test workflows, achieving a 30% effort reduction.",
+          "Built interactive project dashboards in Power BI and wireframed UX designs in Figma."
+        ],
+        "isCurrent": true
+      }
+    ],
+    "tarentoContributions": [
+      {
+        "icon": "fa-solid fa-chalkboard-user",
+        "title": "Agile Leadership",
+        "desc": "Certified Scrum Master managing Scrum Ceremonies, sprint planning, and backlog optimisation. Actively mitigated scope creep and contributed to UAT activities."
+      },
+      {
+        "icon": "fa-solid fa-robot",
+        "title": "Process Automation",
+        "desc": "Implemented UiPath RPA solutions to streamline UAT, reducing manual testing efforts by approximately 30%."
+      },
+      {
+        "icon": "fa-solid fa-chart-line",
+        "title": "Data Visualisation",
+        "desc": "Developed interactive Power BI dashboards for real-time project monitoring, enabling data-driven decision-making and enhanced project transparency."
+      },
+      {
+        "icon": "fa-solid fa-pen-nib",
+        "title": "Design Thinking",
+        "desc": "Utilised FIGMA and Adobe XD to create user-friendly product interfaces, crafting detailed SRS, BRD, and PRD documentation."
+      },
+      {
+        "icon": "fa-solid fa-route",
+        "title": "Product Strategy & Roadmap",
+        "desc": "Defined high-level product visions and mapped multi-quarter release plans, aligning technical roadmaps directly with core business milestones."
+      },
+      {
+        "icon": "fa-solid fa-list-check",
+        "title": "Stakeholder & Backlog Management",
+        "desc": "Prioritized backlog items using value-vs-effort scaling, successfully translating complex customer requests into detailed, developer-ready user stories."
+      }
+    ]
+  },
+  "notableProjects": {
+    "ecommerce": [
+      {
+        "icon": "fa-solid fa-store",
+        "title": "Lulu Hyper-local eCommerce",
+        "date": "May – Oct 2020",
+        "desc": "Flutter mobile app for Lulu Group's hypermarket, featuring promotions, gift card integration, and additional e-commerce functionality for the Gulf region."
+      },
+      {
+        "icon": "fa-solid fa-couch",
+        "title": "HNI: HON Basyx Furniture",
+        "date": "Jun – Dec 2020",
+        "desc": "B2B e-commerce marketplace on Magento-2 Commerce Cloud. Responsible for requirements analysis, stakeholder liaison, Scrum ceremonies, and regression testing."
+      },
+      {
+        "icon": "fa-solid fa-globe",
+        "title": "Zeo Market – eCommerce",
+        "date": "Oct 2017 – Apr 2020",
+        "desc": "India's online retail platform offering diverse products. Integrated Zeo Market Store with giant marketplaces Amazon and Walmart."
+      }
+    ],
+    "enterprise": [
+      {
+        "icon": "fa-solid fa-landmark-flag",
+        "title": "Sludge Management – Odisha Govt",
+        "date": "2022",
+        "desc": "Digitised the complete manual sludge management process for the Government of Odisha on the DIGIT Platform, covering sludge collection and treatment workflows.",
+        "tags": ["DIGIT Platform", "Process Digitisation", "Gov Services"]
+      },
+      {
+        "icon": "fa-solid fa-heart-pulse",
+        "title": "Arcade Therapeutics – StarStarter",
+        "date": "2021 – 2023",
+        "desc": "Spearheaded development of a cross-platform mental health solution. Integrated predictive ML models with clinical screening tools (PHQ-2/GAD-2). Managed HIPAA compliance backlog.",
+        "tags": ["HIPAA", "ML Integration", "Mental Health"]
+      },
+      {
+        "icon": "fa-solid fa-utensils",
+        "title": "Core Dining & Unidors App",
+        "date": "2021 – 2022",
+        "desc": "Core Dining: Role-based restaurant management app. Unidors: eCommerce mobile app for the Finnish Swimming Federation's product range.",
+        "tags": ["Mobile App BA", "Role Access", "Agile"]
+      }
+    ]
+  },
+  "skills": {
+    "strategy": {
+      "title": "Strategy & Business Analysis",
+      "categories": [
+        {
+          "title": "Product Strategy & Leadership",
+          "icon": "fa-solid fa-route",
+          "items": [
+            {
+              "icon": "fa-solid fa-arrows-spin",
+              "name": "Product Lifecycle Management (PLM)",
+              "desc": "Steering products from conception to sunset, aligning stakeholders, and optimizing launch strategy."
+            },
+            {
+              "icon": "fa-solid fa-people-group",
+              "name": "Agile & Scrum Leadership",
+              "desc": "Managing sprint cycles, running Scrum ceremonies (daily standups, reviews, retros), and optimizing product backlogs using Scrum & Kanban frameworks."
+            },
+            {
+              "icon": "fa-solid fa-map",
+              "name": "Strategic Roadmapping & UX Strategy",
+              "desc": "Mapping high-level visions to multi-quarter releases, prioritizing UX enhancements to maximize user adoption and business value."
+            },
+            {
+              "icon": "fa-solid fa-users-rectangle",
+              "name": "Stakeholder Management",
+              "desc": "Bridging the gap between corporate sponsors, end-users, and software engineering teams to resolve complex product priorities."
+            }
+          ]
+        },
+        {
+          "title": "Business Analysis",
+          "icon": "fa-solid fa-magnifying-glass-chart",
+          "items": [
+            {
+              "icon": "fa-solid fa-comments",
+              "name": "Requirement Elicitation & Analysis",
+              "desc": "Conducting workshops, interviews, and audits to extract precise business needs and define technical scopes."
+            },
+            {
+              "icon": "fa-solid fa-sitemap",
+              "name": "Use Case Development",
+              "desc": "Crafting clear and detailed functional scenarios, user stories, and acceptance criteria to direct developer execution."
+            },
+            {
+              "icon": "fa-solid fa-clipboard-check",
+              "name": "Solution Assessment & Validation",
+              "desc": "Evaluating developed software systems against core business objectives and running UAT sessions to guarantee quality."
+            },
+            {
+              "icon": "fa-solid fa-file-invoice",
+              "name": "Detailed Documentation",
+              "desc": "Authoring comprehensive project artifacts including Business (BRD), Product (PRD), Functional (FRD), and Software Requirements Specifications (SRS)."
+            }
+          ]
+        }
+      ]
+    },
+    "technical": {
+      "title": "Technical & Analytical Suite",
+      "tools": [
+        {
+          "icon": "fa-solid fa-chart-column",
+          "name": "Power BI",
+          "category": "Data & Analytics",
+          "desc": "Developing interactive analytics portals and real-time dashboards to facilitate data-driven decisions and track KPIs across business lines.",
+          "badges": ["Dashboard Development", "Data Visualisation", "DAX & Modeling"]
+        },
+        {
+          "icon": "fa-solid fa-robot",
+          "name": "UiPath RPA",
+          "category": "Automation",
+          "desc": "Automating repetitive user tasks, data synchronization pathways, and testing runs to boost organizational efficiency by approximately 30%.",
+          "badges": ["Process Streamlining", "Test Automation", "Robotic Process Auto"]
+        },
+        {
+          "icon": "fa-solid fa-list-check",
+          "name": "JIRA / Azure DevOps",
+          "category": "Agile Delivery",
+          "desc": "Managing sprint backlogs, release tracking, Epic mappings, and task boards to orchestrate streamlined developer collaborations.",
+          "badges": ["Sprint Planning", "Backlog Management", "Roadmap Mappings"]
+        },
+        {
+          "icon": "fa-brands fa-figma",
+          "name": "Figma / Adobe XD",
+          "category": "UI/UX Design",
+          "desc": "Designing interactive high-fidelity mockups, low-fidelity wireframes, and user flow architectures to align design ideas before development.",
+          "badges": ["Wireframing", "UI/UX Design", "Interactive Prototypes"]
+        },
+        {
+          "icon": "fa-solid fa-diagram-project",
+          "name": "Data Mapping & Visio",
+          "category": "Process Modeling",
+          "desc": "Drafting process flowcharts, sequence diagrams, and cross-functional flow maps to identify bottlenecks and design database structures.",
+          "badges": ["Process Modeling", "MS Visio", "Flow Charting"]
+        }
+      ]
+    }
+  },
+  "education": [
+    {
+      "icon": "fa-solid fa-graduation-cap",
+      "school": "Amity University",
+      "degree": "B.Tech – Information Technology",
+      "desc": "First-class engineering program covering core software systems and databases.",
+      "date": "August 2007 – June 2011",
+      "featured": true
+    },
+    {
+      "icon": "fa-solid fa-university",
+      "school": "Sri Balaji University (BITM), Pune",
+      "degree": "Post Graduate Diploma in Management (PGDM)",
+      "desc": "Specialisation in Telecom and Information Technology business workflows.",
+      "date": "July 2012 – April 2014"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "file": "AI-Product-Management-Microsoft.jpg",
+      "title": "AI Enterprise Product Management",
+      "org": "Microsoft",
+      "orgIcon": "fa-brands fa-windows"
+    },
+    {
+      "id": "cert-2",
+      "file": "Certified-Scrum-Master-CSM.png",
+      "title": "Certified Scrum Master (CSM)",
+      "org": "Scrum Alliance",
+      "orgIcon": "fa-solid fa-certificate"
+    },
+    {
+      "id": "cert-3",
+      "file": "Business-Analysis-Fundamental-Udemy.png",
+      "title": "Business Analysis Fundamental",
+      "org": "Udemy",
+      "orgIcon": "fa-solid fa-globe"
+    }
+  ]
+}
