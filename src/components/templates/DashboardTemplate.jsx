@@ -29,9 +29,9 @@ const DashboardTemplate = ({
         themeMode={themeMode}
         onToggleTheme={onToggleTheme}
       />
-      <Box component="main" id="portfolio-main-view" sx={{ pt: { xs: '5rem', md: '5.5rem' } }}>
+      <main id="portfolio-main-view">
         {portfolioContent}
-      </Box>
+      </main>
       <Footer
         onDownloadResume={onDownloadResume}
         onSectionClick={onSectionClick}
