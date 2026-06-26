@@ -4083,7 +4083,7 @@ footer {
         min-height: calc(100vh - 5.5rem);
         height: calc(100vh - 5.5rem);
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         padding-bottom: 2rem;
         box-sizing: border-box;
     }
@@ -4108,11 +4108,11 @@ footer {
     }
     
     .hero-image-container {
-        margin-top: 1.5rem;
+        margin-top: 3.5rem;
     }
     
     .profile-frame {
-        max-width: 330px;
+        max-width: 380px;
     }
 
     #home {
