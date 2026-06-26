@@ -5,18 +5,18 @@ export const getTheme = (mode) => {
     palette: {
       mode: mode,
       primary: {
-        main: mode === 'dark' ? '#14b8a6' : '#0d9488', // teal / accent
-        dark: mode === 'dark' ? '#0d9488' : '#0f766e',
+        main: mode === 'dark' ? '#c5a358' : '#8f6424', // Champagne Gold / Bronze Gold
+        dark: mode === 'dark' ? '#af8d45' : '#734d15',
       },
       background: {
-        default: mode === 'dark' ? '#0b0f19' : '#f8fafc',
-        paper: mode === 'dark' ? '#111827' : '#ffffff',
+        default: mode === 'dark' ? '#080b11' : '#faf8f5', // Obsidian / Ivory Cream
+        paper: mode === 'dark' ? '#0f131c' : '#ffffff',
       },
       text: {
-        primary: mode === 'dark' ? '#f8fafc' : '#0f172a',
-        secondary: mode === 'dark' ? '#94a3b8' : '#475569',
+        primary: mode === 'dark' ? '#fcfaf7' : '#1a202c',
+        secondary: mode === 'dark' ? '#a0aec0' : '#5a6578',
       },
-      divider: mode === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(15, 23, 42, 0.08)',
+      divider: mode === 'dark' ? 'rgba(197, 163, 88, 0.15)' : 'rgba(143, 100, 36, 0.15)',
     },
     typography: {
       fontFamily: "'Inter', -apple-system, sans-serif",

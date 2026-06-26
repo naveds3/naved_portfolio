@@ -1,11 +1,117 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
   if (!personal) return null;
 
+  const heroRef = useRef(null);
+  const imageRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
+  const [offsets, setOffsets] = useState({ dx: 0, dy: 0 });
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    const calculateOffsets = () => {
+      if (!imageRef.current || !heroRef.current) return;
+
+      // Temporarily clear transform to measure the untransformed layout position
+      const savedTransform = imageRef.current.style.transform;
+      imageRef.current.style.transform = 'none';
+
+      // Measure layout position
+      const imgRect = imageRef.current.getBoundingClientRect();
+      
+      // Restore transform immediately
+      imageRef.current.style.transform = savedTransform;
+
+      // Calculate layout center relative to document (independent of scroll)
+      const imageCenterX = imgRect.left + window.scrollX + imgRect.width / 2;
+      const imageCenterY = imgRect.top + window.scrollY + imgRect.height / 2;
+
+      // Get current computed padding-top of main container
+      const rootStyle = window.getComputedStyle(document.documentElement);
+      const paddingTopStr = rootStyle.getPropertyValue('--main-padding-top') || '112px';
+      let paddingTop = 112;
+      if (paddingTopStr.trim().endsWith('rem')) {
+        const remValue = parseFloat(paddingTopStr);
+        const rootFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
+        paddingTop = remValue * rootFontSize;
+      } else if (paddingTopStr.trim().endsWith('px')) {
+        paddingTop = parseFloat(paddingTopStr);
+      }
+
+      // Center of the visible viewport area of the hero section
+      const viewportCenterX = window.innerWidth / 2;
+      const viewportCenterY = paddingTop + (window.innerHeight - paddingTop) / 2;
+
+      // Delta required to translate the image to the exact center of the screen
+      const dx = viewportCenterX - imageCenterX;
+      const dy = viewportCenterY - imageCenterY;
+
+      setOffsets({ dx, dy });
+      setIsInitialized(true);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', calculateOffsets);
+    
+    // Slight timeout to make sure elements are positioned in DOM
+    const timer = setTimeout(calculateOffsets, 100);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', calculateOffsets);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const threshold = 350; // Scroll range of the entrance animation
+  const progress = Math.min(scrollY / threshold, 1);
+
+  // Profile image calculations
+  // Scales down from 1.6 to 1.0; shifts from viewport center to final layout position on scroll
+  const scale = 1 + 0.6 * (1 - progress);
+  const translateX = offsets.dx * (1 - progress);
+  const translateY = offsets.dy * (1 - progress);
+
+  // Left-side hero content styles (fades and translates from bottom)
+  const contentStyle = {
+    opacity: progress,
+    transform: `translate3d(0, ${50 * (1 - progress)}px, 0)`,
+    pointerEvents: progress < 0.2 ? 'none' : 'auto',
+    animation: 'none', // Disable CSS fadeInUp animation to prevent load flashes
+  };
+
+  // Profile image container transform styles
+  const imageStyle = {
+    transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
+    animation: 'none', // Disable CSS fadeIn animation to prevent centering conflicts
+  };
+
+  // Scroll down guide opacity (fades out rapidly as scroll progresses)
+  const indicatorOpacity = Math.max(1 - progress * 4, 0);
+
   return (
-    <section id="home" className="hero">
-      <div className="hero-content">
+    <div className="hero-scroll-wrapper" style={{ height: '160vh', position: 'relative' }}>
+      <section 
+        id="home" 
+        className="hero" 
+        ref={heroRef}
+        style={{ 
+          opacity: isInitialized ? 1 : 0, 
+          transition: 'opacity 0.4s ease-in-out',
+          position: 'sticky',
+          top: 'var(--main-padding-top)',
+          height: 'calc(100vh - var(--main-padding-top))',
+          minHeight: 'auto',
+          overflow: 'hidden'
+        }}
+      >
+      {/* Hero Text and CTA content */}
+      <div className="hero-content" style={contentStyle}>
         <span className="hero-intro">Welcome to my Portfolio</span>
         <h1 className="hero-name">{personal.name}</h1>
         <div className="hero-title">
@@ -140,7 +246,7 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
       </div>
 
       {/* Profile Image Container */}
-      <div className="hero-image-container">
+      <div className="hero-image-container" ref={imageRef} style={imageStyle}>
         <div className="profile-glow"></div>
         <div className="profile-frame">
           <img
@@ -152,7 +258,24 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
           />
         </div>
       </div>
-    </section>
+
+      {/* Floating Scroll Indicator (Luxury onboarding chevron) */}
+      <div 
+        className="hero-scroll-indicator" 
+        style={{ 
+          opacity: indicatorOpacity,
+          pointerEvents: indicatorOpacity < 0.1 ? 'none' : 'auto',
+          transition: 'opacity 0.2s ease-out'
+        }}
+      >
+        <span className="scroll-indicator-text">Scroll Down to Explore</span>
+        <div className="scroll-indicator-mouse">
+          <div className="mouse-wheel"></div>
+        </div>
+        <i className="fa-solid fa-chevron-down scroll-indicator-chevron"></i>
+      </div>
+      </section>
+    </div>
   );
 };
 

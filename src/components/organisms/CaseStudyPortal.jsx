@@ -130,7 +130,8 @@ const CaseStudyPortal = ({
           <div className="header-actions">
             {/* Theme Toggle */}
             <button className="theme-toggle-btn" id="case-study-theme-toggle" onClick={onToggleTheme} aria-label="Toggle dark/light theme">
-              <i className={`fa-solid ${themeMode === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
+              <i className="fa-solid fa-moon"></i>
+              <i className="fa-solid fa-sun"></i>
             </button>
 
             {/* Branding Logo */}
@@ -195,7 +196,7 @@ const CaseStudyPortal = ({
             >
               <div
                 className="card-logo-container"
-                style={{ background: 'rgba(20, 184, 166, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}
+                style={{ background: 'var(--badge-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}
               >
                 <i className="fa-solid fa-gem" style={{ fontSize: '1.5rem', color: 'var(--accent)' }}></i>
               </div>
@@ -220,7 +221,7 @@ const CaseStudyPortal = ({
             >
               <div
                 className="card-logo-container"
-                style={{ background: 'rgba(20, 184, 166, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}
+                style={{ background: 'var(--badge-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}
               >
                 <i className="fa-solid fa-file-medical" style={{ fontSize: '1.5rem', color: 'var(--accent)' }}></i>
               </div>

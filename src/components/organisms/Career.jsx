@@ -126,7 +126,7 @@ const Career = ({ career, onPreview }) => {
                 borderRadius: '10px',
                 transition: 'all var(--transition-fast)',
                 '&:hover': {
-                  borderColor: 'rgba(20, 184, 166, 0.35)',
+                  borderColor: 'var(--accent)',
                   transform: 'translateY(-2px)',
                   '& .contribution-icon-wrapper': {
                     backgroundColor: 'var(--accent)',
@@ -145,8 +145,8 @@ const Career = ({ career, onPreview }) => {
                   height: '2.5rem',
                   minWidth: '2.5rem',
                   borderRadius: '6px',
-                  backgroundColor: 'rgba(20, 184, 166, 0.05)',
-                  border: '1px solid rgba(20, 184, 166, 0.15)',
+                  backgroundColor: 'var(--badge-bg)',
+                  border: '1px solid var(--badge-border)',
                   color: 'var(--accent)',
                   fontSize: '1.1rem',
                   transition: 'all var(--transition-fast)',

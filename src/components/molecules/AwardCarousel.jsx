@@ -137,8 +137,8 @@ const AwardCarousel = ({ onPreview }) => {
                       objectFit: 'contain',
                       borderRadius: '8px',
                       border: idx === activeIndex ? '2px solid var(--accent)' : '1px solid var(--border-color)',
-                      boxShadow: idx === activeIndex ? '0 10px 25px rgba(20, 184, 166, 0.25)' : 'none',
-                      backgroundColor: 'rgba(17, 24, 39, 0.95)',
+                      boxShadow: idx === activeIndex ? '0 10px 25px var(--accent-glow)' : 'none',
+                      backgroundColor: 'var(--bg-secondary)',
                     }}
                   />
                 </Box>

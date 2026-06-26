@@ -42,7 +42,7 @@ const CertCard = ({ file, title, org, orgIcon, onPreview }) => {
           width: '2.5rem',
           height: '2.5rem',
           borderRadius: '50%',
-          backgroundColor: 'rgba(255, 255, 255, 0.03)',
+          backgroundColor: 'var(--badge-bg)',
           border: '1px solid var(--border-color)',
           fontSize: '1rem',
           color: 'var(--text-muted)',

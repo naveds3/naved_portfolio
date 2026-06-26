@@ -47,7 +47,8 @@ const Header = ({ activeSection, onSectionClick, themeMode, onToggleTheme }) => 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           {/* Theme Toggle */}
           <button className="theme-toggle-btn" id="theme-toggle" onClick={onToggleTheme} aria-label="Toggle dark/light theme">
-            <i className={`fa-solid ${themeMode === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
+            <i className="fa-solid fa-moon"></i>
+            <i className="fa-solid fa-sun"></i>
           </button>
 
           {/* Mobile Menu Button */}

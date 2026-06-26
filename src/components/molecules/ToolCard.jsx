@@ -15,7 +15,7 @@ const ToolCard = ({ icon, name, category, desc, badges }) => {
         gap: '1.25rem',
         transition: 'all var(--transition-fast)',
         '&:hover': {
-          borderColor: 'rgba(20, 184, 166, 0.35)',
+          borderColor: 'var(--accent)',
           transform: 'translateY(-4px)',
           boxShadow: 'var(--shadow)',
           '& .tech-tool-icon': {
@@ -36,8 +36,8 @@ const ToolCard = ({ icon, name, category, desc, badges }) => {
             width: '2.75rem',
             height: '2.75rem',
             borderRadius: '8px',
-            backgroundColor: 'rgba(20, 184, 166, 0.05)',
-            border: '1px solid rgba(20, 184, 166, 0.15)',
+            backgroundColor: 'var(--badge-bg)',
+            border: '1px solid var(--badge-border)',
             color: 'var(--accent)',
             fontSize: '1.15rem',
             transition: 'all var(--transition-fast)',
@@ -104,7 +104,7 @@ const ToolCard = ({ icon, name, category, desc, badges }) => {
               fontSize: '0.7rem',
               fontWeight: 600,
               padding: '0.25rem 0.5rem',
-              backgroundColor: 'rgba(255,255,255,0.03)',
+              backgroundColor: 'var(--badge-bg)',
               border: '1px solid var(--border-color)',
               borderRadius: '4px',
               color: 'var(--text-muted)',

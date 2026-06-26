@@ -36,7 +36,7 @@ const Summary = ({ summary }) => {
                   borderRadius: '10px',
                   transition: 'all var(--transition-fast)',
                   '&:hover': {
-                    borderColor: 'rgba(20, 184, 166, 0.35)',
+                    borderColor: 'var(--accent)',
                     transform: 'translateY(-2px)',
                   },
                 }}
@@ -50,8 +50,8 @@ const Summary = ({ summary }) => {
                     width: '2.5rem',
                     height: '2.5rem',
                     borderRadius: '8px',
-                    backgroundColor: 'rgba(20, 184, 166, 0.05)',
-                    border: '1px solid rgba(20, 184, 166, 0.15)',
+                    backgroundColor: 'var(--badge-bg)',
+                    border: '1px solid var(--badge-border)',
                     color: 'var(--accent)',
                     fontSize: '1.1rem',
                   }}
@@ -114,8 +114,8 @@ const Summary = ({ summary }) => {
                     borderRadius: '8px',
                     transition: 'all var(--transition-fast)',
                     '&:hover': {
-                      borderColor: 'rgba(20, 184, 166, 0.3)',
-                      backgroundColor: 'rgba(20, 184, 166, 0.02)',
+                      borderColor: 'var(--accent)',
+                      backgroundColor: 'var(--badge-bg)',
                     },
                   }}
                 >

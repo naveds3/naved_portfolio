@@ -14,7 +14,7 @@ const SkillCard = ({ icon, name, desc }) => {
         borderRadius: '10px',
         transition: 'all var(--transition-fast)',
         '&:hover': {
-          borderColor: 'rgba(20, 184, 166, 0.35)',
+          borderColor: 'var(--accent)',
           transform: 'translateY(-2px)',
           boxShadow: 'var(--shadow)',
           '& .skill-card-icon': {
@@ -35,8 +35,8 @@ const SkillCard = ({ icon, name, desc }) => {
           height: '3rem',
           minWidth: '3rem',
           borderRadius: '8px',
-          backgroundColor: 'rgba(20, 184, 166, 0.05)',
-          border: '1px solid rgba(20, 184, 166, 0.15)',
+          backgroundColor: 'var(--badge-bg)',
+          border: '1px solid var(--badge-border)',
           color: 'var(--accent)',
           fontSize: '1.2rem',
           transition: 'all var(--transition-fast)',

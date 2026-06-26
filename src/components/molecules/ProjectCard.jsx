@@ -97,7 +97,7 @@ const ProjectCard = ({ id, title, date, category, banner, logo, illustration, de
                   textAlign: 'left',
                   transition: 'all var(--transition-fast)',
                   '&:hover': {
-                    borderColor: 'rgba(20, 184, 166, 0.35)',
+                    borderColor: 'var(--accent)',
                     transform: 'translateY(-2px)',
                   },
                 }}
@@ -111,8 +111,8 @@ const ProjectCard = ({ id, title, date, category, banner, logo, illustration, de
                     width: '2.5rem',
                     height: '2.5rem',
                     borderRadius: '8px',
-                    backgroundColor: 'rgba(20, 184, 166, 0.05)',
-                    border: '1px solid rgba(20, 184, 166, 0.15)',
+                    backgroundColor: 'var(--badge-bg)',
+                    border: '1px solid var(--badge-border)',
                     color: 'var(--accent)',
                     fontSize: '1.1rem',
                   }}

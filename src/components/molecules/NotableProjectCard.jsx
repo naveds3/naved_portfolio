@@ -19,7 +19,7 @@ const NotableProjectCard = ({ icon, title, date, desc, tags }) => {
         padding: '2rem',
         transition: 'all var(--transition-smooth)',
         '&:hover': {
-          borderColor: 'rgba(20, 184, 166, 0.4)',
+          borderColor: 'var(--accent)',
           transform: 'translateY(-5px)',
           boxShadow: 'var(--shadow)',
           '& .card-icon-wrapper': {
