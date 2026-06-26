@@ -3556,6 +3556,7 @@ body {
     color: var(--text-secondary);
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 1.35;
@@ -4482,10 +4483,6 @@ footer {
 [data-theme="light"] .carousel-group .narrative-card {
     background-color: #f1f5f9; /* Light slate greyed out background */
     border-color: rgba(148, 163, 184, 0.3);
-}
-
-.carousel-group .card-body {
-    /* Auto height, fit to content */
 }
 
 .carousel-group .narrative-card:hover {
