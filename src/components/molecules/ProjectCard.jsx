@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
-const ProjectCard = ({ id, title, subtitle, date, category, banner, logo, illustration, description, bullets, initiatives, onViewCaseStudy }) => {
+const ProjectCard = ({ id, title, date, category, banner, logo, illustration, description, bullets, initiatives, onViewCaseStudy }) => {
   const isOneColumn = !illustration;
 
   return (

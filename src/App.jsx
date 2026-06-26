@@ -75,14 +75,10 @@ function App() {
   useEffect(() => {
     if (view !== 'portfolio' || loading || !portfolioData) return;
 
-    let isScrollingFromClick = false;
-    let scrollTimeout = null;
-
     const sections = document.querySelectorAll('section');
     const activeSections = new Set();
 
     const navObserver = new IntersectionObserver((entries) => {
-      if (isScrollingFromClick) return;
 
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -305,7 +301,6 @@ function App() {
       <Career
         career={portfolioData?.career}
         onPreview={handlePreview}
-        onViewCaseStudy={handleViewCaseStudy}
       />
       <Projects
         notableProjects={portfolioData?.notableProjects}

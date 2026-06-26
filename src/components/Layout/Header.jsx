@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Box } from '@mui/material';
 
 const Header = ({ activeSection, onSectionClick, themeMode, onToggleTheme }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);

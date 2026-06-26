@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
 
 const Footer = ({ onDownloadResume, onSectionClick }) => {
   const handleLogoClick = (e) => {

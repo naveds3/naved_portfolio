@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography } from '@mui/material';
 
 const CaseStudyPortal = ({
   projectData,
@@ -11,7 +10,7 @@ const CaseStudyPortal = ({
   onPreview
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [autoplayActive, setAutoplayActive] = useState(true);
+  const [autoplayActive] = useState(true);
   const autoplayDuration = 5000;
   const autoplayRef = useRef(null);
   const thumbTrackRef = useRef(null);
@@ -61,6 +60,7 @@ const CaseStudyPortal = ({
   useEffect(() => {
     startAutoplay();
     return () => stopAutoplay();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeProject, autoplayActive, slideGroups.length]);
 
   const goToSlideGroup = (index) => {

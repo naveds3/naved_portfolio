@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography, IconButton } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const awards = [
   { file: 'award_customer_delight_q2_2021.png', title: 'Customer Delight - Q2 2021' },

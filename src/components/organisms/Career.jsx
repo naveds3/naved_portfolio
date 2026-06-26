@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import StairCard from '../molecules/StairCard';
 import AwardCarousel from '../molecules/AwardCarousel';
 
-const Career = ({ career, onPreview, onViewCaseStudy }) => {
+const Career = ({ career, onPreview }) => {
   if (!career) return null;
 
   return (
