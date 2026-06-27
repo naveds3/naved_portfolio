@@ -4109,7 +4109,7 @@ body {
 }
 
 .card-body ul li::before {
-    content: "âœ“";
+    content: "\2713";
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -4524,8 +4524,7 @@ footer {
 }
 
 .carousel-group {
-    flex: 0 0 100%;
-    width: 100%;
+    flex: 0 0 auto;
     height: auto;
     display: flex;
     align-items: stretch; /* Stretch columns to equal height */
