@@ -8,8 +8,8 @@ import React, { useState, useEffect, useRef } from 'react';
 const ANIM_THRESHOLD  = 600;
 const POST_LOCK_COUNT = 2;
 
-// Detect mobile/touch devices — skip the scroll-lock animation on small screens
-const isMobile = () => window.innerWidth <= 768 || ('ontouchstart' in window);
+// Detect mobile/touch devices — skip the scroll-lock animation on small/tablet screens
+const isMobile = () => window.innerWidth <= 1024;
 
 const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
   if (!personal) return null;
@@ -43,19 +43,23 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
       const imageCenterY = rect.top  + rect.height / 2;
 
       const rootStyle = window.getComputedStyle(document.documentElement);
-      const padStr    = rootStyle.getPropertyValue('--main-padding-top') || '112px';
-      let paddingTop  = 112;
-      if (padStr.trim().endsWith('rem')) {
-        const fs   = parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 16;
-        paddingTop = parseFloat(padStr) * fs;
-      } else if (padStr.trim().endsWith('px')) {
-        paddingTop = parseFloat(padStr);
+      const mainPaddingTop = parseInt(rootStyle.getPropertyValue('--main-padding-top')) || 0;
+
+      const viewportWidth  = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      // In the stacked mobile layout, translation is disabled
+      if (isMobile()) {
+        setOffsets({ dx: 0, dy: 0 });
+        setVirtualScroll(ANIM_THRESHOLD);
+        setIsInitialized(true);
+        return;
       }
 
-      const vpCX = window.innerWidth  / 2;
-      const vpCY = paddingTop + (window.innerHeight - paddingTop) / 2;
+      const dx = (viewportWidth / 2) - imageCenterX;
+      const dy = ((viewportHeight - mainPaddingTop) / 2) - (imageCenterY - mainPaddingTop);
 
-      setOffsets({ dx: vpCX - imageCenterX, dy: vpCY - imageCenterY });
+      setOffsets({ dx, dy });
       setIsInitialized(true);
     };
 
@@ -125,6 +129,13 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
       }
     };
 
+    // Unlock dynamically if screen is resized below tablet threshold
+    const handleResize = () => {
+      if (isMobile()) {
+        unlock();
+      }
+    };
+
     // Lock the page immediately on mount
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow             = 'hidden';
@@ -132,11 +143,13 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
     window.addEventListener('wheel',      onWheel,      { passive: false });
     window.addEventListener('touchstart', onTouchStart, { passive: true  });
     window.addEventListener('touchmove',  onTouchMove,  { passive: false });
+    window.addEventListener('resize',     handleResize);
 
     return () => {
       window.removeEventListener('wheel',      onWheel);
       window.removeEventListener('touchstart', onTouchStart);
       window.removeEventListener('touchmove',  onTouchMove);
+      window.removeEventListener('resize',     handleResize);
       document.documentElement.style.overflow = '';
       document.body.style.overflow             = '';
     };

@@ -375,21 +375,24 @@
       "file": "AI-Product-Management-Microsoft.jpg",
       "title": "AI Enterprise Product Management",
       "org": "Microsoft",
-      "orgIcon": "fa-brands fa-windows"
+      "orgIcon": "fa-brands fa-windows",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
     },
     {
       "id": "cert-2",
       "file": "Certified-Scrum-Master-CSM.png",
       "title": "Certified Scrum Master (CSM)",
       "org": "Scrum Alliance",
-      "orgIcon": "fa-solid fa-certificate"
+      "orgIcon": "fa-solid fa-certificate",
+      "logo": "assets/certifications/Certified-Scrum-Master-CSM-logo.png"
     },
     {
       "id": "cert-3",
       "file": "Business-Analysis-Fundamental-Udemy.png",
       "title": "Business Analysis Fundamental",
       "org": "Udemy",
-      "orgIcon": "fa-solid fa-globe"
+      "orgIcon": "fa-solid fa-globe",
+      "logo": "https://www.vectorlogo.zone/logos/udemy/udemy-icon.svg"
     }
   ]
 }

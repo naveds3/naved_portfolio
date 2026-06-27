@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const CertCard = ({ file, title, org, orgIcon, onPreview }) => {
+const CertCard = ({ file, title, org, orgIcon, logo, onPreview }) => {
   return (
     <Box
       className="cert-card"
@@ -23,9 +23,6 @@ const CertCard = ({ file, title, org, orgIcon, onPreview }) => {
           transform: 'translateY(-2px)',
           boxShadow: '0 8px 20px var(--cert-hover-glow)',
           backgroundColor: 'var(--cert-hover-bg)',
-          '& .cert-icon i': {
-            color: 'var(--cert-hover-text)',
-          },
           '& .cert-view-badge': {
             opacity: 1,
             transform: 'translateX(0)',
@@ -42,14 +39,29 @@ const CertCard = ({ file, title, org, orgIcon, onPreview }) => {
           width: '2.5rem',
           height: '2.5rem',
           borderRadius: '50%',
-          backgroundColor: 'var(--badge-bg)',
+          backgroundColor: logo ? '#ffffff' : 'var(--badge-bg)',
           border: '1px solid var(--border-color)',
           fontSize: '1rem',
           color: 'var(--text-muted)',
+          overflow: 'hidden',
           transition: 'all var(--transition-fast)',
+          flexShrink: 0,
         }}
       >
-        <i className="fa-solid fa-award" />
+        {logo ? (
+          <Box
+            component="img"
+            src={logo}
+            alt={`${org} logo`}
+            sx={{
+              width: '65%',
+              height: '65%',
+              objectFit: 'contain',
+            }}
+          />
+        ) : (
+          <i className="fa-solid fa-award" />
+        )}
       </Box>
       <Box className="cert-info" sx={{ flexGrow: 1, textAlign: 'left' }}>
         <Typography

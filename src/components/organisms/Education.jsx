@@ -47,6 +47,7 @@ const Education = ({ education, certifications, onPreview }) => {
                 title={cert.title}
                 org={cert.org}
                 orgIcon={cert.orgIcon}
+                logo={cert.logo}
                 onPreview={onPreview}
               />
             ))}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { Box, Modal, Typography } from '@mui/material';
+import { Box, Modal, Typography, IconButton } from '@mui/material';
 import { getTheme } from './theme';
 import DashboardTemplate from './components/templates/DashboardTemplate';
 
@@ -33,6 +33,8 @@ function App() {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewSrc, setPreviewSrc] = useState('');
   const [previewCaption, setPreviewCaption] = useState('');
+  const [previewGroup, setPreviewGroup] = useState(null); // Array of { src, caption }
+  const [previewIndex, setPreviewIndex] = useState(-1);
   const [toastOpen, setToastOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
 
@@ -72,57 +74,74 @@ function App() {
     sessionStorage.setItem('portfolio-theme', themeMode);
   }, [themeMode]);
 
+  // Lock background scroll when preview modal is open (prevent layout shift)
+  useEffect(() => {
+    if (previewOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+  }, [previewOpen]);
+
   // 3. Scroll Spy for active section indicator
   useEffect(() => {
     if (view !== 'portfolio' || loading || !portfolioData) return;
 
     const sections = document.querySelectorAll('section');
-    const activeSections = new Set();
 
-    const navObserver = new IntersectionObserver((entries) => {
+    const handleScroll = () => {
+      const isAtTop = window.scrollY < 50;
+      const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 120);
 
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          activeSections.add(entry.target);
-        } else {
-          activeSections.delete(entry.target);
+      if (isAtTop) {
+        setActiveSection('#home');
+        return;
+      }
+
+      if (isAtBottom) {
+        setActiveSection('#contact');
+        return;
+      }
+
+      // Focus line is set at 70% down the screen, meaning the tab will highlight
+      // as soon as the section's heading is clearly visible in the viewport.
+      const focusPoint = window.innerHeight * 0.70;
+      let currentActive = null;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= focusPoint && rect.bottom >= focusPoint) {
+          currentActive = `#${section.getAttribute('id')}`;
         }
       });
 
-      if (activeSections.size > 0) {
-        let currentActive = null;
-        const sortedSections = Array.from(activeSections).sort((a, b) => {
-          return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
-        });
-
-        const isAtTop = window.scrollY < 10;
-        const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 15);
-
-        if (isAtTop) {
-          currentActive = '#home';
-        } else if (isAtBottom) {
-          const lastSec = sortedSections[sortedSections.length - 1];
-          currentActive = lastSec ? `#${lastSec.getAttribute('id')}` : '#home';
-        } else {
-          for (let i = sortedSections.length - 1; i >= 0; i--) {
-            const rect = sortedSections[i].getBoundingClientRect();
-            if (rect.top <= 95 && rect.bottom >= 95) {
-              currentActive = `#${sortedSections[i].getAttribute('id')}`;
-              break;
-            }
-          }
-        }
-
-        if (currentActive) {
-          setActiveSection(currentActive);
-        }
+      if (currentActive) {
+        setActiveSection(currentActive);
       }
-    }, { root: null, threshold: 0, rootMargin: '0px' });
+    };
 
-    sections.forEach(section => navObserver.observe(section));
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Initial run
+    handleScroll();
 
     return () => {
-      sections.forEach(section => navObserver.unobserve(section));
+      window.removeEventListener('scroll', onScroll);
     };
   }, [view, loading, portfolioData]);
 
@@ -265,9 +284,11 @@ function App() {
     }
   };
 
-  const handlePreview = (src, caption) => {
+  const handlePreview = (src, caption, group = null, index = -1) => {
     setPreviewSrc(src);
     setPreviewCaption(caption);
+    setPreviewGroup(group);
+    setPreviewIndex(index);
     setPreviewOpen(true);
   };
 
@@ -275,7 +296,41 @@ function App() {
     setPreviewOpen(false);
     setPreviewSrc('');
     setPreviewCaption('');
+    setPreviewGroup(null);
+    setPreviewIndex(-1);
   };
+
+  const handlePrevPreview = () => {
+    if (!previewGroup || previewIndex === -1) return;
+    const nextIdx = (previewIndex - 1 + previewGroup.length) % previewGroup.length;
+    setPreviewIndex(nextIdx);
+    setPreviewSrc(previewGroup[nextIdx].src);
+    setPreviewCaption(previewGroup[nextIdx].caption);
+  };
+
+  const handleNextPreview = () => {
+    if (!previewGroup || previewIndex === -1) return;
+    const nextIdx = (previewIndex + 1) % previewGroup.length;
+    setPreviewIndex(nextIdx);
+    setPreviewSrc(previewGroup[nextIdx].src);
+    setPreviewCaption(previewGroup[nextIdx].caption);
+  };
+
+  // Keyboard navigation for image preview
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!previewOpen) return;
+      if (e.key === 'ArrowRight' && previewGroup) {
+        handleNextPreview();
+      } else if (e.key === 'ArrowLeft' && previewGroup) {
+        handlePrevPreview();
+      } else if (e.key === 'Escape') {
+        handleClosePreview();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [previewOpen, previewGroup, previewIndex]);
 
   const muiTheme = getTheme(themeMode);
 
@@ -355,16 +410,23 @@ function App() {
       <Modal
         open={previewOpen}
         onClose={handleClosePreview}
+        slotProps={{
+          backdrop: {
+            sx: {
+              backgroundColor: themeMode === 'dark' ? 'rgba(8, 11, 17, 0.65)' : 'rgba(255, 255, 255, 0.65)',
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              transition: 'all 0.3s ease',
+            }
+          }
+        }}
         sx={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: 'rgba(11, 15, 25, 0.85)',
-          backdropFilter: 'blur(8px)'
         }}
       >
         <Box
-          onClick={handleClosePreview}
           sx={{
             position: 'relative',
             maxWidth: '90%',
@@ -400,7 +462,8 @@ function App() {
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '1rem',
-              boxShadow: '0 4px 15px var(--accent-glow)'
+              boxShadow: '0 4px 15px var(--accent-glow)',
+              zIndex: 11
             }}
           >
             <i className="fa-solid fa-times" />
@@ -408,13 +471,40 @@ function App() {
           
           <Box
             sx={{
+              position: 'relative',
               width: '100%',
-              overflow: 'auto',
+              overflow: 'hidden',
               borderRadius: '6px',
               border: '1px solid var(--border-color)',
-              backgroundColor: '#000000'
+              backgroundColor: '#000000',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
+            {/* Prev Button */}
+            {previewGroup && previewGroup.length > 1 && (
+              <IconButton
+                onClick={handlePrevPreview}
+                aria-label="Previous image"
+                sx={{
+                  position: 'absolute',
+                  left: '1rem',
+                  zIndex: 10,
+                  backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  '&:hover': {
+                    backgroundColor: 'var(--accent)',
+                    color: '#ffffff',
+                    borderColor: 'var(--accent)'
+                  }
+                }}
+              >
+                <i className="fa-solid fa-chevron-left" />
+              </IconButton>
+            )}
+
             <img
               src={previewSrc}
               alt="Preview"
@@ -423,9 +513,33 @@ function App() {
                 maxWidth: '100%',
                 height: 'auto',
                 maxHeight: '70vh',
-                margin: '0 auto'
+                margin: '0 auto',
+                padding: previewGroup && previewGroup.length > 1 ? '0 4rem' : '0'
               }}
             />
+
+            {/* Next Button */}
+            {previewGroup && previewGroup.length > 1 && (
+              <IconButton
+                onClick={handleNextPreview}
+                aria-label="Next image"
+                sx={{
+                  position: 'absolute',
+                  right: '1rem',
+                  zIndex: 10,
+                  backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  '&:hover': {
+                    backgroundColor: 'var(--accent)',
+                    color: '#ffffff',
+                    borderColor: 'var(--accent)'
+                  }
+                }}
+              >
+                <i className="fa-solid fa-chevron-right" />
+              </IconButton>
+            )}
           </Box>
           <Typography
             sx={{

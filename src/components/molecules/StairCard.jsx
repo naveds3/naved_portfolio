@@ -19,8 +19,35 @@ const StairCard = ({ role, company, date, summary, bullets, isCurrent }) => {
         </Typography>
         <Box component="ul" className="role-bullets" sx={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {bullets.map((bullet, idx) => (
-            <Box component="li" key={idx} sx={{ position: 'relative', paddingLeft: '1.25rem', fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.5, '&::before': { content: '""', position: 'absolute', left: 0, top: '8px', width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--accent)' } }}>
-              {bullet}
+            <Box
+              component="li"
+              key={idx}
+              sx={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '0.6rem',
+                fontSize: '0.88rem',
+                color: 'var(--text-secondary)',
+                lineHeight: 1.5,
+                listStyle: 'none',
+                listStyleType: 'none',
+              }}
+            >
+              {/* Explicit bullet dot — avoids unreliable MUI sx ::before pseudo-element */}
+              <span
+                aria-hidden="true"
+                style={{
+                  display: 'inline-block',
+                  width: '6px',
+                  height: '6px',
+                  minWidth: '6px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--accent)',
+                  marginTop: '7px',
+                  flexShrink: 0,
+                }}
+              />
+              <span>{bullet}</span>
             </Box>
           ))}
         </Box>

@@ -61,6 +61,18 @@
     box-sizing: border-box;
 }
 
+ul, ol {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    list-style-type: none;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -1496,16 +1508,12 @@ footer {
     /* Increased size */
     color: var(--text-secondary);
     position: relative;
-    padding-left: 1.25rem;
+    padding-left: 0;  /* span dot + flex gap handles indentation */
     line-height: 1.5;
 }
 
 .role-bullets li::before {
-    content: 'â†’';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: bold;
+    content: none;  /* Bullet rendered via explicit JSX span — no CSS pseudo-element needed */
 }
 
 /* Current Role Details Section */
@@ -1607,15 +1615,38 @@ footer {
         margin-top: 4rem;
     }
 }
-
-/* Recognitions & Awards Carousel styles */
+/* ── Awards carousel — Swiper overrides ───────────────────────────────── */
 .awards-carousel-section {
     margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
 }
+
+/* Pagination bullet pills */
+.awards-custom-pagination .swiper-pagination-bullet {
+    background-color: var(--border-color);
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.awards-custom-pagination .swiper-pagination-bullet-active {
+    background-color: var(--accent);
+    width: 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Swiper slide shadow override for coverflow depth */
+.awards-swiper-wrapper .swiper-slide-shadow-left,
+.awards-swiper-wrapper .swiper-slide-shadow-right {
+    border-radius: 14px;
+}
+
+
 
 .awards-carousel-title {
     font-family: var(--font-heading);
@@ -1891,22 +1922,16 @@ footer {
 }
 
 .project-bullets li {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 0;  /* flex + gap in JSX handles indentation */
     line-height: 1.5;
     text-align: left;
 }
 
 .project-bullets li::before {
-    content: 'â€¢';
-    position: absolute;
-    left: 0.25rem;
-    color: var(--accent);
-    font-size: 1.25rem;
-    line-height: 1;
-    top: 0;
+    content: none;  /* Bullet rendered via explicit JSX <i> icon — no CSS pseudo-element needed */
 }
 
 .key-contributions-section {
@@ -2173,8 +2198,6 @@ footer {
     transition: all var(--transition-fast);
     cursor: pointer;
     margin-left: auto;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 .project-case-study-btn .btn-logo {
@@ -2501,7 +2524,8 @@ footer {
 
 /* Specific overrides for transparent PNG logos (Pandora / DIGIT) in dark/light themes */
 [data-theme="dark"] img[alt="Pandora Logo"],
-[data-theme="dark"] img[alt="DIGIT Logo"] {
+[data-theme="dark"] img[alt="DIGIT Logo"],
+[data-theme="dark"] img[alt="Cellmark Logo"] {
     filter: brightness(0) invert(1) !important;
 }
 
@@ -2537,8 +2561,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 .skills-tabs .tab-btn:hover {
@@ -2615,8 +2637,9 @@ footer {
     align-items: center;
     gap: 1.25rem;
     transition: all var(--transition-smooth);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .skill-card:hover {
@@ -2685,8 +2708,9 @@ footer {
     transition: all var(--transition-smooth);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .tech-tool-card::before {
@@ -2822,8 +2846,9 @@ footer {
     gap: 1.25rem;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .edu-card:hover {
@@ -2981,9 +3006,10 @@ footer {
     align-items: center;
     gap: 1.5rem;
     transition: all var(--transition-smooth);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     cursor: pointer;
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .cert-card:hover {
@@ -3012,6 +3038,14 @@ footer {
     color: #ffffff;
     transform: scale(1.1) rotate(5deg);
     box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.cert-card:hover .cert-icon:has(img) {
+    background-color: #ffffff;
+}
+
+.cert-card:hover .cert-icon i {
+    color: #ffffff !important;
 }
 
 .cert-info {
@@ -3116,8 +3150,9 @@ footer {
     transition: all var(--transition-smooth);
     text-decoration: none;
     color: inherit;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    will-change: transform, box-shadow;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
     cursor: pointer;
 }
 
@@ -4954,3 +4989,16 @@ footer {
         padding: 0.9rem 1rem;
     }
 }
+
+/* Web/Desktop specific overrides for Project Banner logo */
+@media (min-width: 993px) {
+    .project-banner-logo-container {
+        padding: 1.1rem calc(2.2rem + 10px);
+        top: calc(50% + 4px);
+    }
+    
+    .project-banner-logo {
+        height: 58px;
+    }
+}
+
