@@ -19,6 +19,27 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
+const directoryConfigs = {
+  cellmark: {
+    title: "Cellmark Recycling OMS",
+    desc: "CROPS 2.0 Order Management System & IFS ERP Integration",
+    logo: "assets/cellmark-logo.png",
+    icon: null
+  },
+  pandora: {
+    title: "Pandora SCM",
+    desc: "Global Inventory Visibility & Logistics Modernisation",
+    logo: null,
+    icon: "fa-gem"
+  },
+  health: {
+    title: "Mozambique Health",
+    desc: "Digital Campaign Management & Disease Surveillance",
+    logo: null,
+    icon: "fa-file-medical"
+  }
+};
+
 const CaseStudyPortal = ({
   projectData,
   activeProject,
@@ -165,7 +186,7 @@ const CaseStudyPortal = ({
               '&:hover': {
                 borderColor: 'var(--accent)',
                 color: 'var(--accent)',
-                backgroundColor: 'rgba(20, 184, 166, 0.05)'
+                backgroundColor: 'var(--badge-bg)'
               }
             }}
           >
@@ -228,203 +249,84 @@ const CaseStudyPortal = ({
           </Typography>
 
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, gap: '1.5rem' }}>
-            {/* Cellmark Card */}
-              <Card 
-                onClick={() => {
-                  if (activeProject !== 'cellmark') {
-                    setCurrentSlide(0);
-                    onChangeProject('cellmark');
-                  }
-                }}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 2,
-                  p: 2.5,
-                  cursor: 'pointer',
-                  borderRadius: '16px',
-                  backgroundColor: activeProject === 'cellmark' ? (themeMode === 'light' ? '#f0fdfa' : '#0e2422') : 'var(--bg-card)',
-                  border: activeProject === 'cellmark' ? '2px solid var(--accent)' : '2px solid var(--border-color)',
-                  boxShadow: activeProject === 'cellmark' ? '0 8px 30px var(--accent-glow)' : 'var(--shadow)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    borderColor: 'var(--accent)',
-                    boxShadow: '0 8px 30px var(--accent-glow)'
-                  }
-                }}
-              >
-                <Box sx={{
-                  width: '60px',
-                  height: '60px',
-                  borderRadius: '8px',
-                  backgroundColor: '#ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  p: 0.5,
-                  border: '1px solid var(--border-color)'
-                }}>
-                  <img src="assets/cellmark-logo.png" alt="Cellmark Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                </Box>
-                <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-heading)' }}>
-                    Cellmark Recycling OMS
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: 'var(--text-secondary)', display: 'block', mb: 1, lineHeight: 1.3 }}>
-                    CROPS 2.0 Order Management System & IFS ERP Integration
-                  </Typography>
-                  <Box 
-                    component="span"
-                    sx={{
-                      display: 'inline-block',
-                      px: 1.5,
-                      py: 0.5,
-                      borderRadius: '30px',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      backgroundColor: activeProject === 'cellmark' ? 'rgba(20, 184, 166, 0.15)' : 'rgba(0,0,0,0.05)',
-                      color: activeProject === 'cellmark' ? 'var(--accent)' : 'var(--text-secondary)'
-                    }}
-                  >
-                    {activeProject === 'cellmark' ? 'Active Case Study' : 'Click to Load'}
+            {Object.keys(directoryConfigs).map((key) => {
+              const config = directoryConfigs[key];
+              const isActive = activeProject === key;
+              return (
+                <Card 
+                  key={key}
+                  onClick={() => {
+                    if (activeProject !== key) {
+                      setCurrentSlide(0);
+                      onChangeProject(key);
+                    }
+                  }}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 2,
+                    p: 2.5,
+                    cursor: 'pointer',
+                    borderRadius: '16px',
+                    backgroundColor: isActive 
+                      ? (themeMode === 'light' ? 'rgba(143, 100, 36, 0.04)' : 'rgba(197, 163, 88, 0.05)') 
+                      : 'var(--bg-card)',
+                    border: isActive ? '2px solid var(--accent)' : '2px solid var(--border-color)',
+                    boxShadow: isActive ? '0 8px 30px var(--accent-glow)' : 'var(--shadow)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      borderColor: 'var(--accent)',
+                      boxShadow: '0 8px 30px var(--accent-glow)',
+                      backgroundColor: themeMode === 'light' ? 'rgba(143, 100, 36, 0.02)' : 'rgba(197, 163, 88, 0.02)'
+                    }
+                  }}
+                >
+                  <Box sx={{
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '8px',
+                    backgroundColor: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    p: config.logo ? 0.5 : 1.5,
+                    border: '1px solid var(--border-color)'
+                  }}>
+                    {config.logo ? (
+                      <img src={config.logo} alt={`${config.title} Logo`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    ) : (
+                      <i className={`fa-solid ${config.icon}`} style={{ fontSize: '1.5rem', color: 'var(--accent)' }}></i>
+                    )}
                   </Box>
-                </Box>
-              </Card>
-
-            {/* Pandora Card */}
-              <Card 
-                onClick={() => {
-                  if (activeProject !== 'pandora') {
-                    setCurrentSlide(0);
-                    onChangeProject('pandora');
-                  }
-                }}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 2,
-                  p: 2.5,
-                  cursor: 'pointer',
-                  borderRadius: '16px',
-                  backgroundColor: activeProject === 'pandora' ? (themeMode === 'light' ? '#f0fdfa' : '#0e2422') : 'var(--bg-card)',
-                  border: activeProject === 'pandora' ? '2px solid var(--accent)' : '2px solid var(--border-color)',
-                  boxShadow: activeProject === 'pandora' ? '0 8px 30px var(--accent-glow)' : 'var(--shadow)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    borderColor: 'var(--accent)',
-                    boxShadow: '0 8px 30px var(--accent-glow)'
-                  }
-                }}
-              >
-                <Box sx={{
-                  width: '60px',
-                  height: '60px',
-                  borderRadius: '8px',
-                  backgroundColor: '#ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  p: 1.5,
-                  border: '1px solid var(--border-color)'
-                }}>
-                  <i className="fa-solid fa-gem" style={{ fontSize: '1.5rem', color: 'var(--accent)' }}></i>
-                </Box>
-                <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-heading)' }}>
-                    Pandora SCM
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: 'var(--text-secondary)', display: 'block', mb: 1, lineHeight: 1.3 }}>
-                    Global Inventory Visibility & Logistics Modernisation
-                  </Typography>
-                  <Box 
-                    component="span"
-                    sx={{
-                      display: 'inline-block',
-                      px: 1.5,
-                      py: 0.5,
-                      borderRadius: '30px',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      backgroundColor: activeProject === 'pandora' ? 'rgba(20, 184, 166, 0.15)' : 'rgba(0,0,0,0.05)',
-                      color: activeProject === 'pandora' ? 'var(--accent)' : 'var(--text-secondary)'
-                    }}
-                  >
-                    {activeProject === 'pandora' ? 'Active Case Study' : 'Click to Load'}
+                  <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-heading)' }}>
+                      {config.title}
+                    </Typography>
+                    <Typography variant="caption" sx={{ color: 'var(--text-secondary)', display: 'block', mb: 1, lineHeight: 1.3 }}>
+                      {config.desc}
+                    </Typography>
+                    <Box 
+                      component="span"
+                      sx={{
+                        display: 'inline-block',
+                        px: 1.5,
+                        py: 0.5,
+                        borderRadius: '30px',
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        backgroundColor: isActive ? 'var(--badge-bg)' : 'rgba(0,0,0,0.05)',
+                        color: isActive ? 'var(--accent)' : 'var(--text-secondary)'
+                      }}
+                    >
+                      {isActive ? 'Active Case Study' : 'Click to Load'}
+                    </Box>
                   </Box>
-                </Box>
-              </Card>
-
-            {/* Health Mozambique Card */}
-              <Card 
-                onClick={() => {
-                  if (activeProject !== 'health') {
-                    setCurrentSlide(0);
-                    onChangeProject('health');
-                  }
-                }}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 2,
-                  p: 2.5,
-                  cursor: 'pointer',
-                  borderRadius: '16px',
-                  backgroundColor: activeProject === 'health' ? (themeMode === 'light' ? '#f0fdfa' : '#0e2422') : 'var(--bg-card)',
-                  border: activeProject === 'health' ? '2px solid var(--accent)' : '2px solid var(--border-color)',
-                  boxShadow: activeProject === 'health' ? '0 8px 30px var(--accent-glow)' : 'var(--shadow)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    borderColor: 'var(--accent)',
-                    boxShadow: '0 8px 30px var(--accent-glow)'
-                  }
-                }}
-              >
-                <Box sx={{
-                  width: '60px',
-                  height: '60px',
-                  borderRadius: '8px',
-                  backgroundColor: '#ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  p: 1.5,
-                  border: '1px solid var(--border-color)'
-                }}>
-                  <i className="fa-solid fa-file-medical" style={{ fontSize: '1.5rem', color: 'var(--accent)' }}></i>
-                </Box>
-                <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-heading)' }}>
-                    Mozambique Health
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: 'var(--text-secondary)', display: 'block', mb: 1, lineHeight: 1.3 }}>
-                    Digital Campaign Management & Disease Surveillance
-                  </Typography>
-                  <Box 
-                    component="span"
-                    sx={{
-                      display: 'inline-block',
-                      px: 1.5,
-                      py: 0.5,
-                      borderRadius: '30px',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      backgroundColor: activeProject === 'health' ? 'rgba(20, 184, 166, 0.15)' : 'rgba(0,0,0,0.05)',
-                      color: activeProject === 'health' ? 'var(--accent)' : 'var(--text-secondary)'
-                    }}
-                  >
-                    {activeProject === 'health' ? 'Active Case Study' : 'Click to Load'}
-                  </Box>
-                </Box>
-              </Card>
+                </Card>
+              );
+            })}
           </Box>
         </Box>
 
@@ -448,7 +350,7 @@ const CaseStudyPortal = ({
                   sx={{
                     position: 'relative',
                     width: '100%',
-                    backgroundColor: themeMode === 'light' ? '#e6f4f1' : '#0c1a18',
+                    backgroundColor: themeMode === 'light' ? 'var(--bg-primary)' : 'var(--bg-secondary)',
                     border: '1px solid var(--border-color)',
                     borderRadius: '16px',
                     overflow: 'hidden',

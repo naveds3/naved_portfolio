@@ -2091,7 +2091,7 @@ footer {
 }
 
 .project-showcase-container:hover {
-    border-color: rgba(20, 184, 166, 0.25);
+    border-color: var(--accent);
     box-shadow: 0 20px 50px -15px var(--accent-glow), var(--shadow);
 }
 
@@ -2130,7 +2130,7 @@ footer {
 
 .project-showcase-container:hover .project-banner-logo-container {
     transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 0 15px 30px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 15px 30px var(--accent-glow);
 }
 
 .project-banner-img {
@@ -2427,11 +2427,11 @@ footer {
 
 /* Academic specific overrides */
 .academic-card {
-    background: linear-gradient(135deg, rgba(20, 184, 166, 0.03) 0%, rgba(17, 24, 39, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(197, 163, 88, 0.03) 0%, rgba(17, 24, 39, 0.7) 100%);
 }
 
 [data-theme="light"] .academic-card {
-    background: linear-gradient(135deg, rgba(20, 184, 166, 0.02) 0%, rgba(255, 255, 255, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(143, 100, 36, 0.02) 0%, rgba(255, 255, 255, 0.8) 100%);
 }
 
 /* SCM Engagements Logos Showcase Card */
@@ -2810,7 +2810,7 @@ footer {
 }
 
 .tech-tool-card:hover .tech-tool-badges .tool-badge {
-    background-color: rgba(20, 184, 166, 0.15);
+    background-color: var(--accent-glow);
     border-color: var(--accent);
     color: var(--text-primary);
 }
@@ -3292,7 +3292,7 @@ footer {
         top: 0;
         bottom: 0;
         width: 2px;
-        background: linear-gradient(to bottom, var(--accent) 0%, rgba(20, 184, 166, 0.1) 100%);
+        background: linear-gradient(to bottom, var(--accent) 0%, var(--accent-glow) 100%);
     }
 
     .stair-item {
@@ -3375,32 +3375,7 @@ footer {
 }
 /* CSS Variables matching main portfolio branding */
 #case-study-portal-wrapper {
-    /* Dark Theme (Default) */
-    --bg-primary: #0b0f19;
-    --bg-secondary: #0f1322;
-    --bg-card: rgba(30, 41, 59, 0.45);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent: #14b8a6; /* Premium Teal */
-    --accent-hover: #0d9488;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --font-heading: 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --transition-fast: 0.2s ease;
-    --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme="light"] #case-study-portal-wrapper {
-    --bg-primary: #f8fafc;
-    --bg-secondary: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent: #0d9488;
-    --accent-hover: #0f766e;
-    --border-color: rgba(15, 23, 42, 0.08);
-    --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    --card-shadow: var(--shadow);
 }
 
 /* Reset and Global Styles */
@@ -3521,7 +3496,7 @@ body {
 .theme-toggle-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background-color: rgba(20, 184, 166, 0.05);
+    background-color: var(--badge-bg);
 }
 
 .theme-toggle-btn i {
@@ -3562,7 +3537,7 @@ body {
 .btn-secondary:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background-color: rgba(20, 184, 166, 0.05);
+    background-color: var(--badge-bg);
 }
 
 /* Main Content Wrapper */
@@ -3620,14 +3595,14 @@ body {
 
 .directory-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(20, 184, 166, 0.2);
-    box-shadow: 0 10px 20px rgba(20, 184, 166, 0.05);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 .directory-card.active {
     border-color: var(--accent);
-    background-color: rgba(20, 184, 166, 0.03);
-    box-shadow: 0 8px 25px rgba(20, 184, 166, 0.12);
+    background-color: var(--badge-bg);
+    box-shadow: 0 8px 25px var(--accent-glow);
 }
 
 .card-logo-container {
@@ -3695,7 +3670,7 @@ body {
 }
 
 .active-badge {
-    background-color: rgba(20, 184, 166, 0.1);
+    background-color: var(--badge-bg);
     color: var(--accent);
 }
 
@@ -3833,9 +3808,9 @@ body {
 .presentation-canvas-container {
     position: relative;
     width: 100%;
-    background-color: #0c1a18; /* Dark teal/mint bg */
+    background-color: var(--bg-secondary);
     border-radius: 16px;
-    border: 1px solid rgba(20, 184, 166, 0.15);
+    border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
     overflow: hidden;
     display: flex;
@@ -3850,8 +3825,8 @@ body {
 }
 
 [data-theme="light"] .presentation-canvas-container {
-    background-color: #e6f4f1; /* Light mint/green background */
-    border-color: rgba(13, 148, 136, 0.15);
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
 }
 
 @media (max-width: 768px) {
@@ -3991,7 +3966,7 @@ body {
 .thumbnail-card.active {
     opacity: 1;
     border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);
+    box-shadow: 0 4px 12px var(--accent-glow);
     transform: scale(1.02);
 }
 
@@ -4019,7 +3994,7 @@ body {
 .thumbnail-scroll-arrow:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background-color: rgba(20, 184, 166, 0.05);
+    background-color: var(--badge-bg);
 }
 
 /* Detailed Narrative Section */
@@ -4060,7 +4035,7 @@ body {
 
 .narrative-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(20, 184, 166, 0.2);
+    border-color: var(--accent);
 }
 
 .card-icon-header {
@@ -4182,7 +4157,7 @@ footer {
     background-color: var(--accent);
     border-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(20, 184, 166, 0.25);
+    box-shadow: 0 6px 15px var(--accent-glow);
 }
 
 .footer-copy {

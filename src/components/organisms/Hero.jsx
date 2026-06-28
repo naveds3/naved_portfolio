@@ -12,19 +12,21 @@ const POST_LOCK_COUNT = 2;
 const isMobile = () => window.innerWidth <= 1024;
 
 const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
-  if (!personal) return null;
-
   const heroRef  = useRef(null);
   const imageRef = useRef(null);
 
-  // On mobile: start at progress = 1 (animation already complete) to skip scroll lock
-  const [virtualScroll, setVirtualScroll] = useState(() => isMobile() ? ANIM_THRESHOLD : 0);
+  const shouldSkipAnimation = () => {
+    return isMobile() || (window.location.hash && window.location.hash !== '#home');
+  };
+
+  // On mobile/deep-link: start at progress = 1 (animation already complete) to skip scroll lock
+  const [virtualScroll, setVirtualScroll] = useState(() => shouldSkipAnimation() ? ANIM_THRESHOLD : 0);
   const [offsets, setOffsets]             = useState({ dx: 0, dy: 0 });
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Mutable refs used inside event handlers to avoid stale-closure issues
-  const virtualScrollRef = useRef(0);
-  const isLockedRef      = useRef(true);
+  const virtualScrollRef = useRef(shouldSkipAnimation() ? ANIM_THRESHOLD : 0);
+  const isLockedRef      = useRef(!shouldSkipAnimation());
   const postLockCount    = useRef(0);
   const touchStartY      = useRef(0);
 
@@ -73,8 +75,8 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
 
   // ─── 2. Virtual-scroll engine + page-lock ─────────────────────────────
   useEffect(() => {
-    // Skip scroll lock on mobile — no virtual scroll needed
-    if (isMobile()) return;
+    // Skip scroll lock on mobile or when hash requires it — no virtual scroll needed
+    if (shouldSkipAnimation()) return;
 
     const unlock = () => {
       isLockedRef.current = false;
@@ -180,6 +182,8 @@ const Hero = ({ personal, onEmailCta, onDownloadResume }) => {
 
   // Scroll indicator fades out as animation starts
   const indicatorOpacity = Math.max(1 - progress * 4, 0);
+
+  if (!personal) return null;
 
   return (
     /* Wrapper gives the sticky section room inside the scroll container */
